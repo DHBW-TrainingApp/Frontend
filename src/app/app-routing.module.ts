@@ -5,7 +5,19 @@ const routes: Routes = [
   {
     path: '',
     loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
+  },  {
+    path: 'sidemenu',
+    loadChildren: () => import('./pages/sidemenu/sidemenu.module').then( m => m.SidemenuPageModule)
+  },
+  {
+    path: 'workout-collection',
+    loadChildren: () => import('./pages/workout-collection/workout-collection.module').then( m => m.WorkoutCollectionPageModule)
+  },
+  {
+    path: 'login',
+    loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule)
   }
+
 ];
 @NgModule({
   imports: [
