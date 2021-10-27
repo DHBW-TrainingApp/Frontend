@@ -17,6 +17,16 @@ export class AppComponent implements OnInit {
       title: 'login',
       url: '/tabs/login',
       icon: 'mail'
+    },
+    {
+      title: 'registration',
+      url: '/tabs/registration',
+      icon: 'mail'
+    },
+    {
+      title: 'forgot Passworf',
+      url: '/tabs/forgot-password',
+      icon: 'mail'
     }
   ];
 

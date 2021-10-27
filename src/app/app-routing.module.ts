@@ -5,17 +5,18 @@ const routes: Routes = [
   {
     path: '',
     loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
-  },  {
-    path: 'sidemenu',
-    loadChildren: () => import('./pages/sidemenu/sidemenu.module').then( m => m.SidemenuPageModule)
-  },
-  {
-    path: 'workout-collection',
-    loadChildren: () => import('./pages/workout-collection/workout-collection.module').then( m => m.WorkoutCollectionPageModule)
   },
   {
     path: 'login',
-    loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule)
+    loadChildren: () => import('./pages/login/login.module').then(m => m.LoginPageModule)
+  },
+  {
+    path: 'registration',
+    loadChildren: () => import('./pages/registration/registration.module').then(m => m.RegistrationPageModule)
+  },
+  {
+    path: 'forgot-password',
+    loadChildren: () => import('./pages/forgot-password/forgot-password.module').then(m => m.ForgotPasswordPageModule)
   }
 
 ];
@@ -25,4 +26,4 @@ const routes: Routes = [
   ],
   exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }
