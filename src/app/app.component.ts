@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthenticationService } from "./shared/authentication-service";
+
 
 @Component({
   selector: 'app-root',
@@ -6,6 +8,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent implements OnInit {
+
+  constructor(
+    public authService: AuthenticationService
+  ) { }
+
   public selectedIndex = 0;
   public appPages = [
     {

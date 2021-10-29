@@ -32,6 +32,10 @@ const routes: Routes = [
         loadChildren: () => import('../pages/forgot-password/forgot-password.module').then(m => m.ForgotPasswordPageModule)
       },
       {
+        path: 'verify-email',
+        loadChildren: () => import('../pages/verify-email/verify-email.module').then(m => m.VerifyEmailPageModule)
+      },
+      {
         path: '',
         redirectTo: '/tabs/tab1',
         pathMatch: 'full'

@@ -53,17 +53,17 @@
                 </ion-item>
                 <ion-item lines="full">
                     <ion-label position="floating">Email</ion-label>
-                    <ion-input type="text" required></ion-input>
+                    <ion-input type="text" #email required></ion-input>
                 </ion-item>
 
                 <ion-item lines="full">
                     <ion-label position="floating">Password</ion-label>
-                    <ion-input type="password" required></ion-input>
+                    <ion-input type="password" #password required></ion-input>
                 </ion-item>
 
                 <ion-row>
                     <ion-col>
-                        <ion-button type="submit" color="primary" expand="block">
+                        <ion-button type="submit" color="primary" expand="block" (click)="signUp(email, password)">
                             <p style="color: black;">Sign Up</p>
                         </ion-button>
                     </ion-col>
