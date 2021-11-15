@@ -1,0 +1,59 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title></ion-title>
+    </ion-toolbar>
+</ion-header>
+
+
+
+<ion-content>
+    <ion-card style="background-color: transparent;">
+        <ion-card-header>
+            <ion-card-title>Settings</ion-card-title>
+        </ion-card-header>
+
+        <ion-card-content>
+            <form>
+                <ion-item>
+                    <ion-label style="text-align: center;">Keep in mind that this information is needed to create your ideal workout plan
+                    </ion-label>
+                </ion-item>
+                <ion-item>
+                    <ion-label position="floating">Birthday</ion-label>
+                    <ion-datetime displayFormat="MM/DD/YYYY" min="1945-03-14" max="2012-12-09"></ion-datetime>
+                </ion-item>
+                <ion-item>
+                    <ion-label position="floating">Weight (kg)</ion-label>
+                    <ion-input type="number" value="weight"></ion-input>
+                </ion-item>
+                <ion-item>
+                    <ion-label position="floating">Height (cm)</ion-label>
+                    <ion-input type="number" value="height"></ion-input>
+                </ion-item>
+                <ion-item lines="full">
+                    <ion-segment (ionChange)="segmentChanged($event)" value="diverse">
+                        <ion-segment-button value="female">
+                            <ion-icon name="female-outline"></ion-icon>
+                            <ion-label>Female</ion-label>
+                        </ion-segment-button>
+                        <ion-segment-button value="diverse">
+                            <ion-icon name="male-female-outline"></ion-icon>
+                            <ion-label>Nonbinary</ion-label>
+                        </ion-segment-button>
+                        <ion-segment-button value="rainy">
+                            <ion-icon name="male-outline"></ion-icon>
+                            <ion-label>Male</ion-label>
+                        </ion-segment-button>
+                    </ion-segment>
+                </ion-item>
+                <ion-row>
+                    <ion-col>
+                        <ion-button type="submit" color="primary" expand="block">
+                            <p style="color: black;">Save</p>
+                        </ion-button>
+                    </ion-col>
+                </ion-row>
+            </form>
+        </ion-card-content>
+    </ion-card>
+</ion-content>
