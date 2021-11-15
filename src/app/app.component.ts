@@ -34,6 +34,11 @@ export class AppComponent implements OnInit {
       title: 'forgot Passworf',
       url: '/tabs/forgot-password',
       icon: 'mail'
+    },
+    {
+      title: 'settings',
+      url: '/tabs/settings',
+      icon: 'mail'
     }
   ];
 

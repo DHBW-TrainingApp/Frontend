@@ -7,6 +7,16 @@ import { Component } from '@angular/core';
 })
 export class Tab2Page {
 
-  constructor() {}
+  constructor() {
+
+    const user = JSON.parse(localStorage.getItem('user'));
+    console.log(JSON.stringify(user));
+  }
+
+  ngOnInit() {
+
+  }
+
+
 
 }

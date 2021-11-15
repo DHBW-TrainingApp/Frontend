@@ -32,6 +32,10 @@ const routes: Routes = [
         loadChildren: () => import('../pages/forgot-password/forgot-password.module').then(m => m.ForgotPasswordPageModule)
       },
       {
+        path: 'settings',
+        loadChildren: () => import('../pages/settings/settings.module').then(m => m.SettingsPageModule)
+      },
+      {
         path: 'verify-email',
         loadChildren: () => import('../pages/verify-email/verify-email.module').then(m => m.VerifyEmailPageModule)
       },
