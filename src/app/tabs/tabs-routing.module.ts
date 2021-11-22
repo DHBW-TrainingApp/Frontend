@@ -77,6 +77,13 @@ const routes: Routes = [
           ),
       },
       {
+        path: 'add-meal',
+        loadChildren: () =>
+          import('./../log/addmeal/addmeal.module').then(
+            (m) => m.AddmealPageModule
+          ),
+      },
+      {
         path: '',
         redirectTo: '/tabs/tab1',
         pathMatch: 'full',

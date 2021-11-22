@@ -7,7 +7,6 @@ import { AuthenticationService } from './shared/authentication-service';
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent implements OnInit {
-  constructor(public authService: AuthenticationService) {}
 
   public selectedIndex = 0;
   public appPages = [
@@ -27,7 +26,7 @@ export class AppComponent implements OnInit {
       icon: 'mail',
     },
     {
-      title: 'forgot Passworf',
+      title: 'forgot Password',
       url: '/tabs/forgot-password',
       icon: 'mail',
     },
@@ -51,7 +50,14 @@ export class AppComponent implements OnInit {
       url: '/tabs/update-todo',
       icon: 'mail',
     },
+    {
+      title: 'add-meal',
+      url: '/tabs/add-meal',
+      icon: 'mail',
+    },
   ];
+
+  constructor(public authService: AuthenticationService) {}
 
   ngOnInit() {
     const path = window.location.pathname.split('/')[1];

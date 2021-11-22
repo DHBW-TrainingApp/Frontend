@@ -7,9 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddmealPage implements OnInit {
 
+  myBool = true;
+
+
   constructor() { }
 
+
   ngOnInit() {
+  }
+
+  isChanged(){
+    console.log(this.myBool);
   }
 
 }
