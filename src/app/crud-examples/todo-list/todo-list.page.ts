@@ -5,6 +5,8 @@ export class TODO {
   $key: string;
   title: string;
   description: string;
+  author: string;
+  roles: {};
 }
 
 @Component({
@@ -29,13 +31,10 @@ export class TodoListPage implements OnInit {
   }
 
   todoList() {
-    this.crudService.getTasks().subscribe((data) => {
-      console.log(data);
-    });
+    this.crudService.getTasks().subscribe((data) => {});
   }
 
   remove(id) {
-    console.log(id);
     if (window.confirm('Are you sure?')) {
       this.crudService.delete(id);
     }
