@@ -6,18 +6,47 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./addmeal.page.scss'],
 })
 export class AddmealPage implements OnInit {
-
-  myBool = true;
-
-
   constructor() { }
 
+  energy: string = "";
+  fat: string = "";
+  sat_fat: string = "";
+  carbo: string = "";
+  sugar: string = "";
+  protein: string = "";
+  salt: string = "";
+
+  //value:string;
+
+  test = [
+    {
+      energy: this.energy,
+      fat: this.fat,
+      sat_fat: this.sat_fat,
+    }
+  ];
+
+  getEnergy(val: any){ this.energy = val; }
+  getFat(val: any){ this.fat = val; }
+  getSat_fat(val: any){ this.sat_fat = val; }
+  getCarbo(val: any){ this.carbo = val; }
+  getSugar(val: any){ this.sugar = val; }
+  getProtein(val: any){ this.protein = val; }
+  getSalt(val: any){ this.salt = val; }
+
+  printMe(){
+    console.log(this.energy+" "+this.fat);
+  }
+  //alphas = [this.energy, this.fat, this.sat_fat, this.carbo, this.sugar, this.protein, this.salt];
+  //jj:any = JSON.stringify(this.alphas);
+
+
+ // doLog(){
+ //   console.log(this.jj);
+ // }
 
   ngOnInit() {
   }
 
-  isChanged(){
-    console.log(this.myBool);
-  }
 
 }
