@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { jsonEval } from '@firebase/util';
 
 @Component({
   selector: 'app-addmeal',
@@ -33,6 +34,14 @@ export class AddmealPage implements OnInit {
   getSugar(val: any){ this.sugar = val; }
   getProtein(val: any){ this.protein = val; }
   getSalt(val: any){ this.salt = val; }
+
+  saveData(){
+    console.log("creating json..");
+    const object = {energy:this.energy, fat:this.fat, sat_fat:this.sat_fat, carbo:this.carbo, sugar:this.sugar, protein:this.protein};
+    console.log("xxxx  "+JSON.stringify(object));
+
+  }
+
 
   printMe(){
     console.log(this.energy+" "+this.fat);

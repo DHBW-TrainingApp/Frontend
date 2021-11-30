@@ -13,10 +13,7 @@
   </ion-card-header>
 </ion-card>
 
-<ion-card>
-
-  <div class="card-body">
-    <table class="table table-bordered">
+    <!--<table class="table table-bordered">
       <tr class="tr-top">
         <th>
           Nutritional values
@@ -32,15 +29,62 @@
       <tr><td>- of which sugar</td><td><ion-input type="text" #sugar (keyup)="getSugar(sugar.value)" placeholder="Enter your value.."></ion-input></td></tr>
       <tr><td>Protein</td><td><ion-input type="text" #protein (keyup)="getProtein(protein.value)" placeholder="Enter your value.."></ion-input></td></tr>
       <tr><td>Salt</td><td><ion-input type="text" #salt (keyup)="getSalt(salt.value)" placeholder="Enter your value.."></ion-input></td></tr>
-    </table>
+    </table> -->
 
-    <ion-button #button (click)="printMe()">Send you data</ion-button>
-
-  </div>
+    <!--<ion-button #button (click)="printMe()">Send you data</ion-button>-->
 
 
 
+<ion-card style="background-color: transparent;">
+  <ion-card-header>
+  <ion-card-title>Enter your values (per 100 gram)</ion-card-title>
+  </ion-card-header>
+
+  <ion-card-content>
+  <form>
+    <ion-item lines="full">
+    <ion-label position="floating">Energy</ion-label>
+    <ion-input type="text" #energy (keyup)="getEnergy(energy.value)" required></ion-input>
+    </ion-item>
+
+    <ion-item lines="full">
+    <ion-label position="floating">Fat</ion-label>
+    <ion-input type="text" #fat (keyup)="getFat(fat.value)" required></ion-input>
+    </ion-item>
+
+    <ion-item lines="full">
+    <ion-label position="floating">- saturated fatty acids</ion-label>
+    <ion-input type="text" #sat_fat (keyup)="getSat_fat(sat_fat.value)" required></ion-input>
+    </ion-item>
+
+    <ion-item lines="full">
+    <ion-label position="floating">Carbohydrates</ion-label>
+    <ion-input type="" #carbo (keyup)="getCarbo(carbo.value)" required></ion-input>
+    </ion-item>
+
+    <ion-item lines="full">
+    <ion-label position="floating">Sugar</ion-label>
+    <ion-input type="text" #sugar (keyup)="getSugar(sugar.value)" required></ion-input>
+    </ion-item>
+
+    <ion-item lines="full">
+    <ion-label position="floating">Protein</ion-label>
+    <ion-input type="text" #protein (keyup)="getProtein(protein.value)" required></ion-input>
+    </ion-item>
+
+    <ion-row>
+    <ion-col>
+    <ion-button type="submit" color="primary" expand="block" (click)="saveData()">
+    <p style="color: black;">Save your data</p>
+    </ion-button>
+
+    </ion-col>
+    </ion-row>
+
+  </form>
+  </ion-card-content>
 </ion-card>
+
 
 
 
