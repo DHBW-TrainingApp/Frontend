@@ -6,6 +6,8 @@ export class TODO {
   $key: string;
   title: string;
   description: string;
+  author: string;
+  roles: {};
 }
 
 @Injectable({
@@ -15,20 +17,49 @@ export class CrudService {
   constructor(private ngFirestore: AngularFirestore, private router: Router) {}
 
   create(todo: TODO) {
-    return this.ngFirestore.collection('tasks').add(todo);
+    const user = JSON.parse(localStorage.getItem('user'));
+    todo.author = user.uid;
+    todo = {
+      ...todo,
+      roles: {
+        [user.uid]: 'owner',
+      },
+    };
+    return this.ngFirestore.collection('users').doc(user.uid).set(todo);
   }
 
   getTasks() {
-    return this.ngFirestore.collection('tasks').snapshotChanges();
+    const user = JSON.parse(localStorage.getItem('user'));
+
+    // usages for subcollections
+    this.ngFirestore
+      .collection('users/')
+      .doc(user.uid)
+      .collection('tasks')
+      .snapshotChanges()
+      .subscribe((res) => {
+        res.map((t) => {
+          console.log({
+            id: t.payload.doc.id,
+            ...(t.payload.doc.data() as TODO),
+          });
+        });
+      });
+
+    return this.ngFirestore.collection('users').snapshotChanges();
+
+    return this.ngFirestore
+      .collection('users/' + user.uid + '/tasks')
+      .snapshotChanges();
   }
 
   getTask(id) {
-    return this.ngFirestore.collection('tasks').doc(id).valueChanges();
+    return this.ngFirestore.collection('users').doc(id).valueChanges();
   }
 
   update(id, todo: TODO) {
     this.ngFirestore
-      .collection('tasks')
+      .collection('users')
       .doc(id)
       .update(todo)
       .then(() => {
@@ -38,6 +69,6 @@ export class CrudService {
   }
 
   delete(id: string) {
-    this.ngFirestore.doc('tasks/' + id).delete();
+    this.ngFirestore.doc('users/' + id).delete();
   }
 }
