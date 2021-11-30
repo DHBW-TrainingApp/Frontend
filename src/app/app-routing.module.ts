@@ -37,7 +37,12 @@ const routes: Routes = [
   {
     path: 'update-todo',
     loadChildren: () => import('./crud-examples/update-todo/update-todo.module').then( m => m.UpdateTodoPageModule)
+  },
+  {
+    path: 'add-meal',
+    loadChildren: () => import('./log/addmeal/addmeal.module').then( m => m.AddmealPageModule)
   }
+
 
 ];
 @NgModule({

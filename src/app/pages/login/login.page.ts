@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from "@angular/router";
-import { AuthenticationService } from "../../shared/authentication-service";
+import { Router } from '@angular/router';
+import { AuthenticationService } from '../../shared/authentication-service';
 
 @Component({
   selector: 'app-login',
@@ -21,12 +21,12 @@ export class LoginPage implements OnInit {
         if (this.authService.isEmailVerified) {
           this.router.navigate(['tabs/tab2']);
         } else {
-          window.alert('Email is not verified')
+          window.alert('Email is not verified');
           return false;
         }
       }).catch((error) => {
-        window.alert(error.message)
-      })
+        window.alert(error.message);
+      });
   }
 
 }
