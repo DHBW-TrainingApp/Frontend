@@ -1,57 +1,65 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>addmeal</ion-title>
-  </ion-toolbar>
+    <ion-toolbar>
+        <ion-title>addmeal</ion-title>
+    </ion-toolbar>
 </ion-header>
 
 <ion-content>
 
-<ion-card style="background-color: transparent;">
-  <ion-card-header>
-  <ion-card-title>Track your meal!</ion-card-title>
-  <ion-card-subtitle>Here you can list the food you ate today. </ion-card-subtitle>
-  </ion-card-header>
-</ion-card>
-<!-- the following commented out code is an additional feature that will only be edited eventually.
-     a possible feature that improves the user view and only shows the fields that are relevant for
-     the selected meal. for example, the user only wants to enter his breakfast in the morning, so he
-     clicks on breakfast - everything else disappears.-->
+    <ion-card style="background-color: transparent;">
+        <ion-card-header>
+            <ion-card-title>Track your meal!</ion-card-title>
+            <ion-card-subtitle>Specify the absolute values of your meal</ion-card-subtitle>
+        </ion-card-header>
 
-<!--<div style="text-align: right;">
-<ion-card>
-    <ion-checkbox (ionChange)="isChanged()" color="secondary"></ion-checkbox>Breakfast
-    <ion-checkbox  color="secondary"></ion-checkbox>Lunch
-    <ion-checkbox  color="secondary"></ion-checkbox>Dinner
-    <ion-checkbox  color="secondary"></ion-checkbox>Snacks
-</ion-card> -->
+        <ion-card-content>
+            <form [formGroup]="mealForm" (ngSubmit)="onSubmit()">
+                <ion-item lines="full">
+                    <ion-label position="floating">Title</ion-label>
+                    <ion-input type="text" formControlName="title" required></ion-input>
+                </ion-item>
 
-<ion-card>
-  <ion-input type="text" placeholder="whatcha eat?">Breakfast 1</ion-input>
-  <div style="float: left;">
-    <ion-input type="number" style="float: left;">Energy kJ/kcal:</ion-input>
-    <ion-input type="number" style="float: left;">Fat: </ion-input>
-    <ion-input type="number" style="float: left;">- of which saturated fatty acids: </ion-input>
-    <ion-input type="number" style="float: left;">Carbohydrate: </ion-input>
-    <ion-input type="number" style="float: left;">- of which sugar: </ion-input>
-    <ion-input type="number" style="float: left;">Protein: </ion-input>
-    <ion-input type="number" style="float: left;">Salt: </ion-input>
+                <ion-item lines="full">
+                    <ion-label position="floating">Energy</ion-label>
+                    <ion-input type="text" formControlName="energy" required></ion-input>
+                </ion-item>
 
-  </div>
+                <ion-item lines="full">
+                    <ion-label position="floating">Fat</ion-label>
+                    <ion-input type="text" formControlName="fat" required></ion-input>
+                </ion-item>
 
-  <ion-input type="text">Breakfast 2</ion-input>
+                <ion-item lines="full">
+                    <ion-label position="floating">Saturated fatty acids</ion-label>
+                    <ion-input type="text" formControlName="satFat" required></ion-input>
+                </ion-item>
 
+                <ion-item lines="full">
+                    <ion-label position="floating">Carbohydrates</ion-label>
+                    <ion-input type="" formControlName="carbs" required></ion-input>
+                </ion-item>
 
-  <ion-input type="text">Breakfast 3</ion-input>
+                <ion-item lines="full">
+                    <ion-label position="floating">Sugar</ion-label>
+                    <ion-input type="text" formControlName="sugar" required></ion-input>
+                </ion-item>
 
+                <ion-item lines="full">
+                    <ion-label position="floating">Protein</ion-label>
+                    <ion-input type="text" formControlName="protein" required></ion-input>
+                </ion-item>
 
-  <ion-input type="text">Lunch 1</ion-input>
+                <ion-row style="margin-top: 5px;">
+                    <ion-col>
+                        <ion-button type="submit" color="primary" expand="block">
+                            <p style="color: black;">Save your data</p>
+                        </ion-button>
+                    </ion-col>
+                </ion-row>
+            </form>
+        </ion-card-content>
+    </ion-card>
 
-
-  <ion-input type="text">Lunch 2</ion-input>
-
-
-  <ion-input type="text">Snack 1</ion-input>
-</ion-card>
 
 
 

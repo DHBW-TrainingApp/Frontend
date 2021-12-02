@@ -41,7 +41,11 @@ const routes: Routes = [
   {
     path: 'add-meal',
     loadChildren: () => import('./log/addmeal/addmeal.module').then( m => m.AddmealPageModule)
+  },  {
+    path: 'log',
+    loadChildren: () => import('./log/log/log.module').then( m => m.LogPageModule)
   }
+
 
 
 ];
