@@ -32,19 +32,11 @@ export class CrudService {
     const user = JSON.parse(localStorage.getItem('user'));
 
     // usages for subcollections
-    this.ngFirestore
+    return this.ngFirestore
       .collection('users/')
       .doc(user.uid)
       .collection('tasks')
-      .snapshotChanges()
-      .subscribe((res) => {
-        res.map((t) => {
-          console.log({
-            id: t.payload.doc.id,
-            ...(t.payload.doc.data() as TODO),
-          });
-        });
-      });
+      .snapshotChanges();
 
     return this.ngFirestore.collection('users').snapshotChanges();
 

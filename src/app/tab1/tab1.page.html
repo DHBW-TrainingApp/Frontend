@@ -4,7 +4,6 @@
         </ion-toolbar>
     </ion-header>
 
-
     <ion-grid>
         <ion-row>
             <ion-col>
@@ -16,7 +15,6 @@
                         <ion-icon style="font-size: xxx-large; " name="calendar-outline"></ion-icon>
                     </ion-card-content>
                 </ion-card>
-
                 <ion-card style="background-color: aquamarine;">
                     <ion-card-header style="font-size: x-large; color: black;">
                         Challenges
@@ -26,7 +24,6 @@
                     </ion-card-content>
                 </ion-card>
             </ion-col>
-
             <ion-col>
                 <ion-card color="success">
                     <ion-card-header style="font-size: x-large;">
@@ -36,8 +33,7 @@
                         <ion-icon style="font-size: xxx-large;" name="barbell-outline"></ion-icon>
                     </ion-card-content>
                 </ion-card>
-
-                <ion-card color="dark">
+                <ion-card color="dark" href="/tabs/add-meal">
                     <ion-card-header style="font-size: x-large;">
                         Add MEAL
                     </ion-card-header>
@@ -45,7 +41,6 @@
                         <ion-icon style="font-size: xxx-large;" name="fast-food-outline"></ion-icon>
                     </ion-card-content>
                 </ion-card>
-
                 <ion-card color="tertiary" (click)="functionname()">
                     <ion-card-header style="font-size: x-large;  color: black;">
                         Edit your log
@@ -55,6 +50,15 @@
                     </ion-card-content>
                 </ion-card>
             </ion-col>
+        </ion-row>
+
+
+        <ion-row>
+            <ion-card>
+                <ion-card-content>
+                    <ion-icon></ion-icon>
+                </ion-card-content>
+            </ion-card>
         </ion-row>
     </ion-grid>
 </ion-content>
