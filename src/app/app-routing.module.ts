@@ -41,7 +41,12 @@ const routes: Routes = [
   {
     path: 'add-meal',
     loadChildren: () => import('./log/addmeal/addmeal.module').then( m => m.AddmealPageModule)
-  },  {
+  },
+  {
+    path: 'add-activity',
+    loadChildren: () => import('./log/addactivity/addactivity.module').then( m => m.AddactivityPageModule)
+  },
+  {
     path: 'log',
     loadChildren: () => import('./log/log/log.module').then( m => m.LogPageModule)
   }
