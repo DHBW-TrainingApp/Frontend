@@ -84,6 +84,13 @@ const routes: Routes = [
           ),
       },
       {
+        path: 'add-activity',
+        loadChildren: () =>
+          import('./../log/addactivity/addactivity.module').then(
+            (m) => m.AddactivityPageModule
+          ),
+      },
+      {
         path: '',
         redirectTo: '/tabs/tab1',
         pathMatch: 'full',

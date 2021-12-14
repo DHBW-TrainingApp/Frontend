@@ -55,6 +55,11 @@ export class AppComponent implements OnInit {
       url: '/tabs/add-meal',
       icon: 'mail',
     },
+    {
+      title: 'add-activity',
+      url: '/tabs/add-activity',
+      icon: 'mail',
+    },
   ];
 
   constructor(public authService: AuthenticationService) {}
