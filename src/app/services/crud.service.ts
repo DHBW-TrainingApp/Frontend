@@ -19,8 +19,8 @@ export class CrudService {
 
   createMeal(meal: Meal) {
     const user = JSON.parse(localStorage.getItem('user'));
-    meal.title = user.uid;
-    return this.ngFirestore.collection('users').doc(user.uid).set(meal);
+    //meal.title = user.uid;
+    return this.ngFirestore.collection('users').doc(user.uid).collection('tasks').add(meal);
   }
 
   // Samples
@@ -43,9 +43,7 @@ export class CrudService {
     // usages for subcollections
     return this.ngFirestore
       .collection('users/')
-      .doc(user.uid)
-      .collection('tasks')
-      .snapshotChanges();
+      .doc(user.uid).collection('tasks').snapshotChanges();
 
     return this.ngFirestore.collection('users').snapshotChanges();
 
