@@ -91,6 +91,19 @@ const routes: Routes = [
           ),
       },
       {
+        path: 'challenge',
+        loadChildren: () =>
+          import('./../log/challenge/challenge.module').then(
+            (m) => m.ChallengePageModule
+          ),
+      },      {
+        path: 'challenge-create',
+        loadChildren: () =>
+          import('./../crud-examples/challenge-create/challenge-create.module').then(
+            (m) => m.ChallengeCreatePageModule
+          ),
+      },
+      {
         path: '',
         redirectTo: '/tabs/tab1',
         pathMatch: 'full',

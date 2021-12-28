@@ -49,7 +49,15 @@ const routes: Routes = [
   {
     path: 'log',
     loadChildren: () => import('./log/log/log.module').then( m => m.LogPageModule)
+  },  {
+    path: 'challenge',
+    loadChildren: () => import('./log/challenge/challenge.module').then( m => m.ChallengePageModule)
+  },
+  {
+    path: 'challenge-create',
+    loadChildren: () => import('./crud-examples/challenge-create/challenge-create.module').then( m => m.ChallengeCreatePageModule)
   }
+
 
 
 
