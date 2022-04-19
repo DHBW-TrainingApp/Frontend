@@ -2,14 +2,8 @@ import { TodolistSettingComponent } from './../todolist-setting/todolist-setting
 import { Component, OnInit } from '@angular/core';
 import { CrudService } from './../../services/crud.service';
 import { PopoverController } from '@ionic/angular';
-
-
-
-
 //import { MatIconModule } from '@angular/material/icon';
-
 //import { MatButtonModule } from '@angular/material/button';
-
 
 export class TODO {
   $key: string;
@@ -24,6 +18,7 @@ export class TODO {
   templateUrl: './todo-list.page.html',
   styleUrls: ['./todo-list.page.scss'],
 })
+
 export class TodoListPage implements OnInit {
   Tasks: TODO[];
 
@@ -39,7 +34,6 @@ export class TodoListPage implements OnInit {
       });
     });
   }
-
 
   async settingsPopover(ev: any) {
     const siteInfo = { id: 1, name: 'edupala' };
@@ -62,12 +56,9 @@ export class TodoListPage implements OnInit {
 
   }
 
-
-
-  edit(){
-    console.log("Ich bin ein Dummy");
+  displayMeal(){
+    console.log("huhu");
   }
-
 
   todoList() {
     this.crudService.getTasks().subscribe((data) => {});

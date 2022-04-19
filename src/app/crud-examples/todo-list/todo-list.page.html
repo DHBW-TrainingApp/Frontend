@@ -17,11 +17,10 @@
 <ion-content>
 
     <ion-list>
-        <ion-item *ngFor="let task of Tasks" lines="full">
+        <ion-item *ngFor="let task of Tasks" lines="full" (click)=displayMeal()>
             <ion-label>
                 <strong>{{task.title}}</strong>
                 <p>{{task.energy}} kcal</p>
-                <!--<p>{{task.protein}}g of protein</p>-->
             </ion-label>
 
             <div item-end>
@@ -33,7 +32,7 @@
                 </button>-->
 
                   <ion-buttons slot="end">
-                    <ion-button (click)="settingsPopover()">
+                    <ion-button (click)="settingsPopover()" style="color: #ffd342;">
                       <ion-icon slot="icon-only" ios="ellipsis-horizontal" md="ellipsis-vertical"></ion-icon>
                     </ion-button>
                   </ion-buttons>
