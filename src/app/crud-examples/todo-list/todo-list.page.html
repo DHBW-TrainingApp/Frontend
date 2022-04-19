@@ -1,4 +1,9 @@
+<script type="module">
+  import { popoverController } from 'https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/index.esm.js';
+  window.popoverController = popoverController;
+</script>
 <ion-header>
+
     <ion-toolbar>
         <ion-title></ion-title>
     </ion-toolbar>
@@ -16,16 +21,69 @@
             <ion-label>
                 <strong>{{task.title}}</strong>
                 <p>{{task.energy}} kcal</p>
-                <p>{{task.protein}}g of protein</p>
+                <!--<p>{{task.protein}}g of protein</p>-->
             </ion-label>
 
             <div item-end>
-                <button [routerLink]="['/update-todo/', task.id]">
-          <ion-icon name="create" style="zoom:1.5"></ion-icon>
-        </button>
+               <!-- <button [routerLink]="['/update-todo/', task.id]">
+                  <ion-icon name="create" style="zoom:1.5"></ion-icon>
+                </button>
                 <button (click)="remove(task.id)">
-          <ion-icon name="trash" style="zoom:1.5"></ion-icon>
-        </button>
+                  <ion-icon name="trash" style="zoom:1.5"></ion-icon>
+                </button>-->
+
+                  <ion-buttons slot="end">
+                    <ion-button (click)="settingsPopover()">
+                      <ion-icon slot="icon-only" ios="ellipsis-horizontal" md="ellipsis-vertical"></ion-icon>
+                    </ion-button>
+                  </ion-buttons>
+
+                  <script>
+                    let currentPopover = null;
+
+                    const buttons = document.querySelectorAll('ion-button');
+                    for (var i = 0; i < buttons.length; i++) {
+                      buttons[i].addEventListener('click', handleButtonClick);
+                    }
+
+                    async function handleButtonClick(ev) {
+                      popover = await popoverController.create({
+                        component: 'popover-example-page',
+                        event: ev,
+                        translucent: true,
+                      });
+                      currentPopover = popover;
+                      return popover.present();
+                    }
+
+                    function dismissPopover() {
+                      if (currentPopover) {
+                        currentPopover.dismiss().then(() => {
+                          currentPopover = null;
+                        });
+                      }
+                    }
+
+                    customElements.define(
+                      'popover-example-page',
+                      class ModalContent extends HTMLElement {
+                        connectedCallback() {
+                          this.innerHTML = `
+                        <ion-list>
+                          <ion-list-header>Ionic</ion-list-header>
+                          <ion-item button>Learn Ionic</ion-item>
+                          <ion-item button>Documentation</ion-item>
+                          <ion-item button>Showcase</ion-item>
+                          <ion-item button>GitHub Repo</ion-item>
+                          <ion-item lines="none" detail="false" button onClick="dismissPopover()">Close</ion-item>
+                        </ion-list>
+                      `;
+                        }
+                      }
+                    );
+                  </script>
+
+
             </div>
         </ion-item>
     </ion-list>
