@@ -2,6 +2,9 @@
 [![CI](https://github.com/DHBW-TrainingApp/workout-log/actions/workflows/main.yml/badge.svg)](https://github.com/DHBW-TrainingApp/workout-log/actions/workflows/main.yml)
 # Workout-log
 <img style="float: right;" src="https://img.shields.io/github/issues-pr/DHBW-TrainingApp/workout-log.svg" /> 
+<img style="float: right;" src="https://img.shields.io/github/issues/DHBW-TrainingApp/workout-log.svg" /> 
+<img style="float: right;" src="https://img.shields.io/github/license/DHBW-TrainingApp/workout-log.svg" /> 
+<img style="float: right;" src="https://img.shields.io/github/stars/DHBW-TrainingApp/workout-log.svg" /> 
 <img style="float: right;" src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white" />   
 <img style="float: right;" src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" /> 
 <img src="https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white" /> 
