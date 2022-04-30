@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>challenge</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card style="background-color: transparent;">
+    <ion-card-header>
+        <ion-card-title>Challenge yourself or other people!</ion-card-title>
+        <ion-card-subtitle>View your generated challenges or create some!</ion-card-subtitle>
+    </ion-card-header>
+  </ion-card>
+
+<form (ngSubmit)="routeToCreate()">
+
+  <ion-button type="submit" color="success" expand="block" >
+    <p style="color: black;">Create a challenge</p>
+  </ion-button>
+</form>
+
+
+  <p>Listed challenges</p>
+
+
+
+</ion-content>
