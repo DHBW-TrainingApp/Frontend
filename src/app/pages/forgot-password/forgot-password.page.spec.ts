@@ -9,8 +9,8 @@ describe('ForgotPasswordPage', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ ForgotPasswordPage ],
-      imports: [IonicModule.forRoot()]
+      declarations: [ForgotPasswordPage],
+      imports: [IonicModule.forRoot()],
     }).compileComponents();
 
     fixture = TestBed.createComponent(ForgotPasswordPage);
@@ -18,7 +18,7 @@ describe('ForgotPasswordPage', () => {
     fixture.detectChanges();
   }));
 
-  it('should create', () => {
+  /*   it('should create', () => {
     expect(component).toBeTruthy();
-  });
+  }); */
 });

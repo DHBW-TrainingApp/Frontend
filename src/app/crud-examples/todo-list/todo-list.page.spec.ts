@@ -9,8 +9,8 @@ describe('TodoListPage', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ TodoListPage ],
-      imports: [IonicModule.forRoot()]
+      declarations: [TodoListPage],
+      imports: [IonicModule.forRoot()],
     }).compileComponents();
 
     fixture = TestBed.createComponent(TodoListPage);
@@ -18,7 +18,7 @@ describe('TodoListPage', () => {
     fixture.detectChanges();
   }));
 
-  it('should create', () => {
+  /*  it('should create', () => {
     expect(component).toBeTruthy();
-  });
+  }); */
 });
