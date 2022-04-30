@@ -34,5 +34,5 @@ jobs:
         run: |
           npm i
           npm install -g @angular/cli
-          ng test
+          npm test -- --watch=false --browsers=ChromeHeadless
 
