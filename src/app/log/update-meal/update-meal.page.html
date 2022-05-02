@@ -1,0 +1,62 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>addmeal</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card style="background-color: transparent;">
+    <ion-card-header>
+      <ion-card-title>Update your meal!</ion-card-title>
+      <ion-card-subtitle>Update the nutrition facts for your meal</ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-card-content>
+      <form [formGroup]="mealForm" (ngSubmit)="onSubmit()">
+        <ion-item lines="full">
+          <ion-label position="floating">Title</ion-label>
+          <ion-input type="text" formControlName="title" required></ion-input>
+        </ion-item>
+
+        <ion-item lines="full">
+          <ion-label position="floating">Energy</ion-label>
+          <ion-input type="text" formControlName="energy" required></ion-input>
+        </ion-item>
+
+        <ion-item lines="full">
+          <ion-label position="floating">Fat</ion-label>
+          <ion-input type="text" formControlName="fat" required></ion-input>
+        </ion-item>
+
+        <ion-item lines="full">
+          <ion-label position="floating">Saturated fatty acids</ion-label>
+          <ion-input type="text" formControlName="satFat" required></ion-input>
+        </ion-item>
+
+        <ion-item lines="full">
+          <ion-label position="floating">Carbohydrates</ion-label>
+          <ion-input type="" formControlName="carbs" required></ion-input>
+        </ion-item>
+
+        <ion-item lines="full">
+          <ion-label position="floating">Sugar</ion-label>
+          <ion-input type="text" formControlName="sugar" required></ion-input>
+        </ion-item>
+
+        <ion-item lines="full">
+          <ion-label position="floating">Protein</ion-label>
+          <ion-input type="text" formControlName="protein" required></ion-input>
+        </ion-item>
+
+        <ion-row style="margin-top: 5px;">
+          <ion-col>
+            <ion-button type="submit" color="primary" expand="block">
+              <p style="color: black;">Save Data</p>
+            </ion-button>
+          </ion-col>
+        </ion-row>
+      </form>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

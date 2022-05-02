@@ -77,6 +77,13 @@ const routes: Routes = [
           ),
       },
       {
+        path: 'update-meal',
+        loadChildren: () =>
+          import('./../log/update-meal/update-meal.module').then(
+            (m) => m.UpdateMealPageModule
+          ),
+      },
+      {
         path: 'add-meal',
         loadChildren: () =>
           import('./../log/addmeal/addmeal.module').then(
@@ -96,12 +103,18 @@ const routes: Routes = [
           import('./../log/challenge/challenge.module').then(
             (m) => m.ChallengePageModule
           ),
-      },      {
+      },
+      {
+        path: 'log',
+        loadChildren: () =>
+          import('./../log//log/log.module').then((m) => m.LogPageModule),
+      },
+      {
         path: 'challenge-create',
         loadChildren: () =>
-          import('./../crud-examples/challenge-create/challenge-create.module').then(
-            (m) => m.ChallengeCreatePageModule
-          ),
+          import(
+            './../crud-examples/challenge-create/challenge-create.module'
+          ).then((m) => m.ChallengeCreatePageModule),
       },
       {
         path: '',

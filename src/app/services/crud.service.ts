@@ -20,7 +20,11 @@ export class CrudService {
   createMeal(meal: Meal) {
     const user = JSON.parse(localStorage.getItem('user'));
     //meal.title = user.uid;
-    return this.ngFirestore.collection('users').doc(user.uid).collection('tasks').add(meal);
+    return this.ngFirestore
+      .collection('users')
+      .doc(user.uid)
+      .collection('tasks')
+      .add(meal);
   }
 
   // Samples
@@ -43,17 +47,26 @@ export class CrudService {
     // usages for subcollections
     return this.ngFirestore
       .collection('users/')
-      .doc(user.uid).collection('tasks').snapshotChanges();
+      .doc(user.uid)
+      .collection('tasks')
+      .snapshotChanges();
 
-    return this.ngFirestore.collection('users').snapshotChanges();
+    /*  return this.ngFirestore.collection('users').snapshotChanges();
 
     return this.ngFirestore
       .collection('users/' + user.uid + '/tasks')
-      .snapshotChanges();
+      .snapshotChanges(); */
   }
 
   getTask(id) {
-    return this.ngFirestore.collection('users').doc(id).valueChanges();
+    const user = JSON.parse(localStorage.getItem('user'));
+
+    return this.ngFirestore
+      .collection('users/')
+      .doc(user.uid)
+      .collection('tasks')
+      .doc(id)
+      .valueChanges();
   }
 
   update(id, todo: TODO) {
@@ -67,7 +80,28 @@ export class CrudService {
       .catch((error) => console.log(error));
   }
 
+  updateMeal(id, meal: Meal) {
+    const user = JSON.parse(localStorage.getItem('user'));
+
+    this.ngFirestore
+      .collection('users/')
+      .doc(user.uid)
+      .collection('tasks')
+      .doc(id)
+      .update(meal)
+      .then(() => {
+        this.router.navigate(['/todo-list']);
+      })
+      .catch((error) => console.log(error));
+  }
+
   delete(id: string) {
-    this.ngFirestore.doc('users/' + id).delete();
+    const user = JSON.parse(localStorage.getItem('user'));
+    this.ngFirestore
+      .collection('users/')
+      .doc(user.uid)
+      .collection('tasks')
+      .doc(id)
+      .delete();
   }
 }
