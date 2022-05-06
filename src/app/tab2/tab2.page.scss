@@ -1,0 +1,27 @@
+ion-card-header {
+  font-family: 'Rubik-Black';
+  text-align: center;
+}
+
+ion-card {
+  width: 100%;
+}
+
+ion-card:hover {
+  filter: brightness(50%);
+}
+
+ion-grid {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+  height: 98%;
+  text-align: center;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

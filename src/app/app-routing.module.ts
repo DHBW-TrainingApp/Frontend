@@ -41,27 +41,6 @@ const routes: Routes = [
       ),
   },
   {
-    path: 'create',
-    loadChildren: () =>
-      import('./crud-examples/create/create.module').then(
-        (m) => m.CreatePageModule
-      ),
-  },
-  {
-    path: 'todo-list',
-    loadChildren: () =>
-      import('./crud-examples/todo-list/todo-list.module').then(
-        (m) => m.TodoListPageModule
-      ),
-  },
-  {
-    path: 'update-todo/:id',
-    loadChildren: () =>
-      import('./crud-examples/update-todo/update-todo.module').then(
-        (m) => m.UpdateTodoPageModule
-      ),
-  },
-  {
     path: 'update-meal/:id',
     loadChildren: () =>
       import('./log/update-meal/update-meal.module').then(
@@ -81,11 +60,6 @@ const routes: Routes = [
       ),
   },
   {
-    path: 'log',
-    loadChildren: () =>
-      import('./log/log/log.module').then((m) => m.LogPageModule),
-  },
-  {
     path: 'bmi',
     loadChildren: () =>
       import('./util/bmi/bmi.module').then((m) => m.BmiPageModule),
@@ -95,13 +69,6 @@ const routes: Routes = [
     loadChildren: () =>
       import('./log/challenge/challenge.module').then(
         (m) => m.ChallengePageModule
-      ),
-  },
-  {
-    path: 'challenge-create',
-    loadChildren: () =>
-      import('./crud-examples/challenge-create/challenge-create.module').then(
-        (m) => m.ChallengeCreatePageModule
       ),
   },
 ];

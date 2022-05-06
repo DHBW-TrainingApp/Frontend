@@ -7,7 +7,6 @@ import { AuthenticationService } from './shared/authentication-service';
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent implements OnInit {
-
   public selectedIndex = 0;
   public appPages = [
     {
@@ -33,21 +32,6 @@ export class AppComponent implements OnInit {
     {
       title: 'settings',
       url: '/tabs/settings',
-      icon: 'mail',
-    },
-    {
-      title: 'create',
-      url: '/tabs/create',
-      icon: 'mail',
-    },
-    {
-      title: 'todo-list',
-      url: '/tabs/todo-list',
-      icon: 'mail',
-    },
-    {
-      title: 'update-todo',
-      url: '/tabs/update-todo',
       icon: 'mail',
     },
     {

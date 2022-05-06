@@ -1,22 +1,78 @@
-<ion-header [translucent]="true">
+<ion-content fullscreen>
+  <ion-header>
     <ion-toolbar>
-        <ion-title>
-            Tab 2
-        </ion-title>
     </ion-toolbar>
-</ion-header>
+  </ion-header>
 
-<ion-content [fullscreen]="true">
-    <ion-header collapse="condense">
-        <ion-toolbar>
-            <ion-title size="large">Tab 2</ion-title>
-        </ion-toolbar>
-    </ion-header>
+  <ion-grid>
+    <ion-row>
 
-    <app-explore-container name="Tab 2 page"></app-explore-container>
 
-    <ion-tab-button routerDirection="root" [routerLink]="[tabs/create]" lines="none" detail="false">
-        <ion-icon name="add-circle-outline"></ion-icon>
-        <ion-label>Create Task</ion-label>
-    </ion-tab-button>
+      <ion-card color="transparent" href="/tabs/tab1">
+        <ion-card-header style="font-size: x-large; text-align: left;">
+          <ion-label>
+            <p>Welcome,</p>
+            <strong>{{username}}</strong>
+          </ion-label>
+        </ion-card-header>
+
+      </ion-card>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-card color="warning" href="/tabs/tab1">
+          <ion-card-header style="font-size: xx-large;">
+            Watch your log
+          </ion-card-header>
+          <ion-card-content>
+            <ion-icon style="font-size: xxx-large; " name="calendar-outline"></ion-icon>
+          </ion-card-content>
+        </ion-card>
+        <ion-card style="background-color: aquamarine;" href="/tabs/challenge">
+          <ion-card-header style="font-size: x-large; color: black;">
+            Challenges
+          </ion-card-header>
+          <ion-card-content>
+            <ion-icon style="font-size: xxx-large; color: black;" name="trophy-outline"></ion-icon>
+          </ion-card-content>
+        </ion-card>
+
+      </ion-col>
+      <ion-col>
+        <ion-card color="success" href="/tabs/add-activity">
+          <ion-card-header style="font-size: x-large;">
+            Add Activity
+          </ion-card-header>
+          <ion-card-content>
+            <ion-icon style="font-size: xxx-large;" name="barbell-outline"></ion-icon>
+          </ion-card-content>
+        </ion-card>
+        <ion-card color="dark" href="/tabs/add-meal">
+          <ion-card-header style="font-size: x-large;">
+            Add MEAL
+          </ion-card-header>
+          <ion-card-content>
+            <ion-icon style="font-size: xxx-large;" name="fast-food-outline"></ion-icon>
+          </ion-card-content>
+        </ion-card>
+        <ion-card color="tertiary" (click)="functionname()">
+          <ion-card-header style="font-size: x-large;  color: black;">
+            Edit your log
+          </ion-card-header>
+          <ion-card-content>
+            <ion-icon style="font-size: xxx-large; color: black;" name="hammer-outline"></ion-icon>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+
+
+    <ion-row>
+      <ion-card color="transparent">
+        <ion-card-content>
+          <ion-icon></ion-icon>
+        </ion-card-content>
+      </ion-card>
+    </ion-row>
+  </ion-grid>
 </ion-content>
