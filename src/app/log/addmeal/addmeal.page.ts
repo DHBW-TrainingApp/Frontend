@@ -33,13 +33,14 @@ export class AddmealPage implements OnInit {
 
   onSubmit() {
     if (!this.mealForm.valid) {
+      window.alert('Input all fields');
       return false;
     } else {
       this.crudService
         .createMeal(this.mealForm.value)
         .then(() => {
           this.mealForm.reset();
-          this.router.navigate(['/todo-list']);
+          this.router.navigate(['/tabs/tab1']);
         })
         .catch((err) => {
           console.log(err);
