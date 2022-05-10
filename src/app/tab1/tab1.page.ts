@@ -1,5 +1,9 @@
 import { Component } from '@angular/core';
 import { CrudService } from '../services/crud.service';
+import { TodolistSettingComponent } from './../log/todolist-setting/todolist-setting.component';
+import { PopoverController } from '@ionic/angular';
+
+
 
 export class TODO {
   $key: string;
@@ -16,7 +20,7 @@ export class TODO {
 })
 export class Tab1Page {
   Tasks: TODO[];
-  constructor(private crudService: CrudService) {}
+  constructor(private crudService: CrudService, private popoverController: PopoverController) {}
 
   ngOnInit() {
     this.crudService.getTasks().subscribe((res) => {
@@ -27,6 +31,27 @@ export class Tab1Page {
         };
       });
     });
+  }
+
+  async settingsPopover(ev: any) {
+    const siteInfo = { id: 1, name: 'edupala' };
+    const popover = await this.popoverController.create({
+      component: TodolistSettingComponent,
+      event: ev,
+      cssClass: 'popover_setting',
+      componentProps: {
+        site: siteInfo
+      },
+      translucent: true
+    });
+
+    popover.onDidDismiss().then((result) => {
+      console.log(result.data);
+    });
+
+    return await popover.present();
+    /** Sync event from popover component */
+
   }
 
   todoList() {

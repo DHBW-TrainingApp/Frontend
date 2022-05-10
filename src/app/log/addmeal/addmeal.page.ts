@@ -21,6 +21,7 @@ export class AddmealPage implements OnInit {
 
   ngOnInit() {
     this.mealForm = this.formBuilder.group({
+      type: 'meal',
       title: [''],
       energy: [''],
       carbs: [''],

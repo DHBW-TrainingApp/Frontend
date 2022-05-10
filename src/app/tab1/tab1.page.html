@@ -13,21 +13,34 @@
 
   <ion-list>
     <ion-item *ngFor="let task of Tasks" lines="full">
-      <div *ngIf="task.title==='sda'">Content to render when condition is true.</div>
+      <div *ngIf="task.type==='meal'">
+        Content to render when condition is true.
+      </div>
+
       <ion-label>
         <strong>{{task.title}}</strong>
         <p>{{task.energy}} kcal</p>
         <p>{{task.protein}}g of protein</p>
       </ion-label>
 
-      <div item-end>
+
+
+      <!-- old menu:  --><!--       <div item-end>
         <button [routerLink]="['/update-meal', task.id]">
           <ion-icon name="create" style="zoom:1.5"></ion-icon>
         </button>
         <button (click)="remove(task.id)">
           <ion-icon name="trash" style="zoom:1.5"></ion-icon>
         </button>
-      </div>
+      </div> -->
+
+
+      <!-- 3 yellow menu dots -->
+      <ion-buttons slot="end">
+        <ion-button (click)="settingsPopover()" style="color: #ffd342;">
+          <ion-icon slot="icon-only" ios="ellipsis-horizontal" md="ellipsis-vertical"></ion-icon>
+        </ion-button>
+      </ion-buttons>
     </ion-item>
   </ion-list>
 
