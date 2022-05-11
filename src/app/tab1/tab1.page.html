@@ -14,7 +14,10 @@
   <ion-list>
     <ion-item *ngFor="let task of Tasks" lines="full">
       <div *ngIf="task.type==='meal'">
-        Content to render when condition is true.
+
+        <p>{{task.date.substring(0,10)}}</p>Content to render when condition is true. <br>
+
+
       </div>
 
       <ion-label>
@@ -36,11 +39,27 @@
 
 
       <!-- 3 yellow menu dots -->
-      <ion-buttons slot="end">
+
+
+    <!-- ####################test############################# -->
+
+    <ion-list>
+      <!-- <ion-item (click)="editMeal()"> -->
+        <ion-item [routerLink]="['/update-meal', task.id]">
+          <!-- TODO: Verlinkung / Funktion-->
+        Edit
+      </ion-item>
+      <ion-item (click)="remove(task.id)">
+        <!-- TODO: Verlinkung / Funktion -->
+        Delete
+      </ion-item>
+    </ion-list>
+    <!-- ####################test############################# -->
+<!--       <ion-buttons slot="end">
         <ion-button (click)="settingsPopover()" style="color: #ffd342;">
           <ion-icon slot="icon-only" ios="ellipsis-horizontal" md="ellipsis-vertical"></ion-icon>
         </ion-button>
-      </ion-buttons>
+      </ion-buttons> -->
     </ion-item>
   </ion-list>
 

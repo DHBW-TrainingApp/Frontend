@@ -15,6 +15,11 @@
         <ion-card-content>
             <form [formGroup]="mealForm" (ngSubmit)="onSubmit()">
                 <ion-item lines="full">
+                <ion-label position="floating">Date</ion-label>
+                <ion-datetime type="text" formControlName="date" displayFormat="DD/MM/YYYY"></ion-datetime>
+
+                </ion-item>
+                <ion-item lines="full">
                     <ion-label position="floating">Title</ion-label>
                     <ion-input type="text" formControlName="title" required></ion-input>
                 </ion-item>

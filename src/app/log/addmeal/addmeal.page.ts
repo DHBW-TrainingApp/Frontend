@@ -12,6 +12,9 @@ import { Router } from '@angular/router';
 })
 export class AddmealPage implements OnInit {
   mealForm: FormGroup;
+  theDate = "".substring(0,10);
+
+
 
   constructor(
     private crudService: CrudService,
@@ -21,6 +24,7 @@ export class AddmealPage implements OnInit {
 
   ngOnInit() {
     this.mealForm = this.formBuilder.group({
+      date: this.theDate,
       type: 'meal',
       title: [''],
       energy: [''],
@@ -33,6 +37,9 @@ export class AddmealPage implements OnInit {
   }
 
   onSubmit() {
+    console.log("start of onsubmit in addmeal");
+    console.log("Date: " + this.mealForm.get('date').value.substring(0,10));
+    this.theDate = this.mealForm.get('date').value.substring(0,10);
     if (!this.mealForm.valid) {
       window.alert('Input all fields');
       return false;

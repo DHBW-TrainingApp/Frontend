@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { PopoverController, } from '@ionic/angular';
+import { PopoverController, IonicModule, IonList } from '@ionic/angular';
 
 
 @Component({

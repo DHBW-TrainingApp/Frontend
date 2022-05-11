@@ -1,10 +1,10 @@
 <ion-content>
   <ion-list>
     <!-- <ion-item (click)="editMeal()"> -->
-      <button [routerLink]="['./../update-meal', task.id]">
+      <ion-item [routerLink]="['/update-meal', task.id]">
         <!-- TODO: Verlinkung / Funktion-->
       Edit
-    </button>
+    </ion-item>
     <ion-item (click)="deleteMeal()">
       <!-- TODO: Verlinkung / Funktion -->
       Delete

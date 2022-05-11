@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthenticationService } from './shared/authentication-service';
+import { IonicModule } from '@ionic/angular';
 
 @Component({
   selector: 'app-root',

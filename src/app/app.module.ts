@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+import { TodolistSettingComponent } from './log/todolist-setting/todolist-setting.component';
 
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 
@@ -16,7 +17,7 @@ import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { environment } from '../environments/environment';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, TodolistSettingComponent],
   entryComponents: [],
   imports: [
     BrowserModule,
