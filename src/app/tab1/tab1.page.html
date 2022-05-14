@@ -5,7 +5,7 @@
 </ion-header>
 <ion-header>
   <ion-toolbar>
-    <ion-title>YOUR LOG</ion-title>
+
   </ion-toolbar>
 </ion-header>
 
@@ -28,7 +28,8 @@
 
 
 
-      <!-- old menu:  --><!--       <div item-end>
+      <!-- old menu:  -->
+      <!--       <div item-end>
         <button [routerLink]="['/update-meal', task.id]">
           <ion-icon name="create" style="zoom:1.5"></ion-icon>
         </button>
@@ -41,21 +42,21 @@
       <!-- 3 yellow menu dots -->
 
 
-    <!-- ####################test############################# -->
+      <!-- ####################test############################# -->
 
-    <ion-list>
-      <!-- <ion-item (click)="editMeal()"> -->
+      <ion-list>
+        <!-- <ion-item (click)="editMeal()"> -->
         <ion-item [routerLink]="['/update-meal', task.id]">
           <!-- TODO: Verlinkung / Funktion-->
-        Edit
-      </ion-item>
-      <ion-item (click)="remove(task.id)">
-        <!-- TODO: Verlinkung / Funktion -->
-        Delete
-      </ion-item>
-    </ion-list>
-    <!-- ####################test############################# -->
-<!--       <ion-buttons slot="end">
+          Edit
+        </ion-item>
+        <ion-item (click)="remove(task.id)">
+          <!-- TODO: Verlinkung / Funktion -->
+          Delete
+        </ion-item>
+      </ion-list>
+      <!-- ####################test############################# -->
+      <!--       <ion-buttons slot="end">
         <ion-button (click)="settingsPopover()" style="color: #ffd342;">
           <ion-icon slot="icon-only" ios="ellipsis-horizontal" md="ellipsis-vertical"></ion-icon>
         </ion-button>

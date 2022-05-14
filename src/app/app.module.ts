@@ -15,9 +15,10 @@ import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { environment } from '../environments/environment';
+import { FileSizePipe } from './file-size.pipe';
 
 @NgModule({
-  declarations: [AppComponent, TodolistSettingComponent],
+  declarations: [AppComponent, TodolistSettingComponent, FileSizePipe],
   entryComponents: [],
   imports: [
     BrowserModule,

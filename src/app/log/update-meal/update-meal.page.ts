@@ -26,6 +26,7 @@ export class UpdateMealPage implements OnInit {
       this.mealForm = this.formBuilder.group({
         title: [data['title']],
         energy: [data['energy']],
+        date: [data['date']],
         fat: [data['fat']],
         satFat: [data['satFat']],
         carbs: [data['carbs']],
@@ -38,6 +39,7 @@ export class UpdateMealPage implements OnInit {
   ngOnInit() {
     this.mealForm = this.formBuilder.group({
       title: [''],
+      date: [''],
       energy: [''],
       fat: [''],
       satFat: [''],

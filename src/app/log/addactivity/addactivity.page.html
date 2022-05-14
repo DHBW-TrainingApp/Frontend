@@ -1,84 +1,48 @@
 <ion-header>
-    <ion-toolbar>
-        <ion-title>addactivity</ion-title>
-    </ion-toolbar>
+  <ion-toolbar>
+    <ion-title>addactivity</ion-title>
+  </ion-toolbar>
 </ion-header>
 
 <ion-content>
 
-    <ion-card style="background-color: transparent;">
-        <ion-card-header>
-            <ion-card-title>Track your Activitys</ion-card-title>
-            <ion-card-subtitle>What was your last Activity</ion-card-subtitle>
-        </ion-card-header>
+  <ion-card style="background-color: transparent;">
+    <ion-card-header>
+      <ion-card-title>Track your Activity</ion-card-title>
+      <ion-card-subtitle>What was your last Activity</ion-card-subtitle>
+    </ion-card-header>
 
 
-        <ion-card-content>
-            <form [formGroup]="mealForm" (ngSubmit)="onSubmit()">
-                <ion-item lines="full">
-                    <ion-label position="floating">Title</ion-label>
-                    <ion-input type="text" formControlName="title" required></ion-input>
-                </ion-item>
+    <ion-card-content>
+      <form [formGroup]="mealForm" (ngSubmit)="onSubmit()">
+        <ion-item lines="full">
+          <ion-label position="floating">Title</ion-label>
+          <ion-input type="text" formControlName="title" required></ion-input>
+        </ion-item>
 
+        <ion-item>
+          <ion-label position="floating">Date</ion-label>
+          <ion-datetime displayFormat="MMM DD, h:mm A" formControlName="date"></ion-datetime>
+        </ion-item>
 
-                <ion-item>
-                    <ion-label>Select your exercises</ion-label>
-                    <ion-select [interfaceOptions]="customAlertOptions" interface="alert" multiple="true" placeholder="Select One">
-                      <ion-select-option value="Deadlift">Deadlift</ion-select-option>
-                      <ion-select-option value="Back squat">Back squat</ion-select-option>
-                      <ion-select-option value="Bench Press">Bench Press</ion-select-option>
-                      <ion-select-option value="Romanian Deadlift">Romanian Deadlift</ion-select-option>
-                      <ion-select-option value="Kettlebell swing">Kettlebell swing</ion-select-option>
-                      <ion-select-option value="Suspended Pushup">Suspended Pushup</ion-select-option>
-                      <ion-select-option value="Pullup">Pullup</ion-select-option>
-                      <ion-select-option value="Barbell overhead press">Barbell overhead press</ion-select-option>
-                      <ion-select-option value="Pushups">Pushups</ion-select-option>
-                      <ion-select-option value="Squats">Squats</ion-select-option>
-                      <ion-select-option value="Dumbbell presses">Dumbbell presses</ion-select-option>
-                      <ion-select-option value="Burpees">Burpees</ion-select-option>
-                      <ion-select-option value="Planks">Planks</ion-select-option>
-                      <ion-select-option value="Sit-ups">Sit-ups</ion-select-option>
-                      <ion-select-option value="Chrunch">Chrunch</ion-select-option>
+        <ion-item lines="full">
+          <ion-label position="floating">Sets</ion-label>
+          <ion-input type="text" formControlName="sets" required></ion-input>
+        </ion-item>
 
-                    </ion-select>
-                  </ion-item>
-                  <ion-item>
-                    <ion-label position="floating">When did you Train</ion-label>
-                     <ion-datetime placeholder="Select Date"></ion-datetime>
-                </ion-item>
+        <ion-item lines="full">
+          <ion-label position="floating">Repeats</ion-label>
+          <ion-input type="text" formControlName="reps" required></ion-input>
+        </ion-item>
 
-                <ion-item lines="full">
-                    <ion-label position="floating">Length 
-                        <ion-card-subtitle>(in Minutes)</ion-card-subtitle> </ion-label>
-                    <ion-input type="text" formControlName="energy" required></ion-input>
-                </ion-item>
-
-                <ion-item lines="full">
-                    <ion-label position="floating">Sets</ion-label>
-                    <ion-input type="text" formControlName="fat" required></ion-input>
-                </ion-item>
-
-                <ion-item lines="full">
-                    <ion-label position="floating">Repeats</ion-label>
-                    <ion-input type="text" formControlName="satFat" required></ion-input>
-                </ion-item>
-
-                <ion-row style="margin-top: 5px;">
-                    <ion-col>
-                        <ion-button type="submit" color="primary" expand="block">
-                            <p style="color: black;">Save your data</p>
-                        </ion-button>
-                    </ion-col>
-                </ion-row>
-            </form>
-        </ion-card-content>
-    </ion-card>
-
-
-
-
-
-
-
-
+        <ion-row style="margin-top: 5px;">
+          <ion-col>
+            <ion-button type="submit" color="primary" expand="block">
+              <p style="color: black;">Save your data</p>
+            </ion-button>
+          </ion-col>
+        </ion-row>
+      </form>
+    </ion-card-content>
+  </ion-card>
 </ion-content>

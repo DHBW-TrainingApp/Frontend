@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { AddmealPageRoutingModule } from './addmeal-routing.module';
 
 import { AddmealPage } from './addmeal.page';
+import { FileSizePipe } from 'src/app/file-size.pipe';
 
 @NgModule({
   imports: [

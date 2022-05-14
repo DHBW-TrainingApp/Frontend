@@ -22,12 +22,9 @@ export class AddactivityPage implements OnInit {
   ngOnInit() {
     this.mealForm = this.formBuilder.group({
       title: [''],
-      energy: [''],
-      carbs: [''],
-      fat: [''],
-      satFat: [''],
-      sugar: [''],
-      protein: [''],
+      date: new Date().toISOString(),
+      sets: [''],
+      reps: [''],
     });
   }
 
