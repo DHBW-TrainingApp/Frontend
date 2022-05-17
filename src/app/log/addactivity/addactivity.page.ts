@@ -21,6 +21,7 @@ export class AddactivityPage implements OnInit {
 
   ngOnInit() {
     this.mealForm = this.formBuilder.group({
+      type: 'activity',
       title: [''],
       date: new Date().toISOString(),
       sets: [''],
