@@ -3,16 +3,14 @@ import { CrudService } from '../services/crud.service';
 import { TodolistSettingComponent } from './../log/todolist-setting/todolist-setting.component';
 import { PopoverController } from '@ionic/angular';
 
-
-
 export class TODO {
   $key: string;
   title: string;
   description: string;
   author: string;
   roles: {};
+  date: string;
 }
-
 @Component({
   selector: 'app-tab1',
   templateUrl: 'tab1.page.html',
@@ -20,7 +18,10 @@ export class TODO {
 })
 export class Tab1Page {
   Tasks: TODO[];
-  constructor(private crudService: CrudService, private popoverController: PopoverController) {}
+  constructor(
+    private crudService: CrudService,
+    private popoverController: PopoverController
+  ) {}
 
   ngOnInit() {
     this.crudService.getTasks().subscribe((res) => {
@@ -29,6 +30,10 @@ export class Tab1Page {
           id: t.payload.doc.id,
           ...(t.payload.doc.data() as TODO),
         };
+      });
+
+      this.Tasks.sort(function (a, b) {
+        return new Date(b.date).getTime() - new Date(a.date).getTime();
       });
     });
   }
@@ -40,9 +45,9 @@ export class Tab1Page {
       event: ev,
       cssClass: 'popover_setting',
       componentProps: {
-        site: siteInfo
+        site: siteInfo,
       },
-      translucent: true
+      translucent: true,
     });
 
     popover.onDidDismiss().then((result) => {
@@ -51,7 +56,6 @@ export class Tab1Page {
 
     return await popover.present();
     /** Sync event from popover component */
-
   }
 
   todoList() {
