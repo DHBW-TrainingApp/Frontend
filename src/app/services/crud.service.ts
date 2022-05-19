@@ -58,6 +58,11 @@ export class CrudService {
       .snapshotChanges(); */
   }
 
+  getUsers() {
+    // usages for subcollections
+    return this.ngFirestore.collection('users').snapshotChanges();
+  }
+
   getTask(id) {
     const user = JSON.parse(localStorage.getItem('user'));
 
