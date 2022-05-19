@@ -82,7 +82,6 @@ export class CrudService {
 
   updateMeal(id, meal: Meal) {
     const user = JSON.parse(localStorage.getItem('user'));
-
     this.ngFirestore
       .collection('users/')
       .doc(user.uid)
@@ -103,5 +102,12 @@ export class CrudService {
       .collection('tasks')
       .doc(id)
       .delete();
+  }
+
+  getImgFilePath(id: string) {
+    return this.ngFirestore
+      .collection('filesCollection/')
+      .doc(id)
+      .valueChanges();
   }
 }

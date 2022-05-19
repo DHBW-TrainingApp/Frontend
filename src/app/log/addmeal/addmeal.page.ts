@@ -153,7 +153,9 @@ export class AddmealPage implements OnInit {
       .set(image)
       .then((data) => {
         console.log(ImgId);
-        this.mealForm.value.img = ImgId;
+        this.crudService.getImgFilePath(ImgId).subscribe((data) => {
+          this.mealForm.value.img = data['filepath'];
+        });
       })
       .catch((error) => {
         console.log(error);

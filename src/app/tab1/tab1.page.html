@@ -18,6 +18,10 @@
         <p>{{task.date.substring(0,10)}}</p>
 
         <ion-label>
+          <div id="meal" *ngIf="task.img">
+            <img [src]="task.img" />
+          </div>
+
           <strong>{{task.title}}</strong>
           <p>{{task.energy}} kcal</p>
           <p>{{task.protein}}g of protein</p>
@@ -25,7 +29,7 @@
 
       </div>
 
-      <div  id="activity"  *ngIf="task.type==='activity'">
+      <div id="activity" *ngIf="task.type==='activity'">
         <p>this is for the activity</p>
         <p>{{task.title}}</p>
         <p>{{task.reps}}</p>
