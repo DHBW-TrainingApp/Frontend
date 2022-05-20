@@ -2,14 +2,18 @@ import { Component } from '@angular/core';
 import { CrudService } from '../services/crud.service';
 import { TodolistSettingComponent } from './../log/todolist-setting/todolist-setting.component';
 import { PopoverController } from '@ionic/angular';
+import { element } from 'protractor';
 
 export class TODO {
-  $key: string;
-  title: string;
-  description: string;
-  author: string;
-  roles: {};
-  date: string;
+  $key?: string;
+  title?: string;
+  description?: string;
+  author?: string;
+  roles?: {};
+  date?: string;
+  type?: string;
+  protein?: string;
+  energy?: string;
 }
 @Component({
   selector: 'app-tab1',
@@ -35,6 +39,8 @@ export class Tab1Page {
       this.Tasks.sort(function (a, b) {
         return new Date(b.date).getTime() - new Date(a.date).getTime();
       });
+
+      this.calculateDateSums();
     });
   }
 
@@ -66,5 +72,50 @@ export class Tab1Page {
     if (window.confirm('Are you sure?')) {
       this.crudService.delete(id);
     }
+  }
+
+  calculateDateSums() {
+    let days = [];
+    let date = new Date(this.Tasks[0].date).toDateString();
+    let protein = 0;
+    let kcal = 0;
+    for (let i = 0; i < this.Tasks.length; i++) {
+      let element = this.Tasks[i];
+      if (element.type === 'meal') {
+        if (new Date(element.date).toDateString() == date) {
+          if (!isNaN(Number(element.protein))) {
+            protein += Number(element.protein);
+          }
+
+          if (!isNaN(Number(element.energy))) {
+            kcal += Number(element.energy);
+          }
+        } else {
+          days.push({
+            type: 'date',
+            index: i + days.length,
+            energy: kcal.toString(),
+            protein: protein.toString(),
+          });
+          if (!isNaN(Number(element.protein))) {
+            protein = Number(element.protein);
+          } else {
+            protein = 0;
+          }
+
+          if (!isNaN(Number(element.energy))) {
+            kcal = Number(element.energy);
+          } else {
+            kcal = 0;
+          }
+          date = new Date(element.date).toDateString();
+        }
+      }
+    }
+
+    days.forEach((element) => {
+      this.Tasks.splice(element.index, 0, element);
+    });
+    console.log(this.Tasks);
   }
 }
