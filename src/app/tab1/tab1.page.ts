@@ -112,9 +112,10 @@ export class Tab1Page {
         }
       }
     }
-
+    let index = 0;
     days.forEach((element) => {
-      this.Tasks.splice(element.index, 0, element);
+      this.Tasks.splice(index, 0, element);
+      index = element.index + 1;
     });
     console.log(this.Tasks);
   }
