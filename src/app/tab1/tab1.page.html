@@ -10,10 +10,9 @@
 </ion-header>
 
 <ion-content>
-
   <ion-list>
-    <ion-item *ngFor="let task of Tasks" lines="full">
-      <div id="meal" *ngIf="task.type==='meal'">
+    <ion-item *ngFor="let task of Tasks" lines="full" [routerLink]="['/meal-view', task.id]">
+      <div id="meal" *ngIf="task.type==='meal'" >
 
         <p>{{task.date.substring(0,10)}}</p>
 
@@ -33,6 +32,13 @@
         <p>this is for the activity</p>
         <p>{{task.title}}</p>
         <p>{{task.reps}}</p>
+
+      </div>
+
+      <div *ngIf="task.type==='date'">
+        <p>hallo</p>
+        <p>{{task.energy}}</p>
+        <p>{{task.protein}}</p>
 
       </div>
 

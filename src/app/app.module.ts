@@ -3,6 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { TodolistSettingComponent } from './log/todolist-setting/todolist-setting.component';
+import { MealviewPage } from './log/mealview/mealview.page';
+import { ActivityviewPage } from './log/activityview/activityview.page';
 
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 

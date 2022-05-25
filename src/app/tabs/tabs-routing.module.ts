@@ -62,6 +62,29 @@ const routes: Routes = [
             (m) => m.UpdateMealPageModule
           ),
       },
+
+
+
+
+      {
+        path: 'meal-view',
+        loadChildren: () =>
+          import('./../log/mealview/mealview.module').then(
+            (m) => m.MealviewModule
+          ),
+      },
+      {
+        path: 'activity-view',
+        loadChildren: () =>
+          import('./../log/activityview/activityview.module').then(
+            (m) => m.ActivityviewModule
+          ),
+      },
+
+
+
+
+
       {
         path: 'add-meal',
         loadChildren: () =>

@@ -9,7 +9,7 @@ export class Tab2Page {
   username;
   constructor() {
     const user = JSON.parse(localStorage.getItem('user'));
-    if (!this.username) {
+    if (!this.username == undefined) {
       this.username = JSON.stringify(user.displayName).slice(1, -1);
       // console.log(JSON.stringify(user.uid));
     }

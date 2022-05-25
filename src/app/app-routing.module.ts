@@ -1,3 +1,4 @@
+import { ActivityviewPage } from './log/activityview/activityview.page';
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
@@ -47,6 +48,26 @@ const routes: Routes = [
         (m) => m.UpdateMealPageModule
       ),
   },
+
+
+
+  {
+    path: 'meal-view/:id',
+    loadChildren: () =>
+      import('./log/mealview/mealview.module').then(
+        (m) => m.MealviewModule
+      ),
+  },
+  {
+    path: 'activity-view/:id',
+    loadChildren: () =>
+      import('./log/activityview/activityview.module').then(
+        (m) => m.ActivityviewModule
+      ),
+  },
+
+
+
   {
     path: 'add-meal',
     loadChildren: () =>

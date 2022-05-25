@@ -1,0 +1,71 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>View meal</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card style="background-color: transparent;">
+    <ion-card-header>
+      <ion-card-title>Track your meal!</ion-card-title>
+      <ion-card-subtitle>Specify the absolute values of your meal</ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-card-content>
+      <form >
+        <ion-item lines="full">
+          <ion-label position="floating">Date</ion-label>
+          <ion-datetime displayFormat="MMM DD, h:mm A" formControlName="date"></ion-datetime>
+        </ion-item>
+
+        <ion-item lines="full">
+          <ion-label position="floating">Title</ion-label>
+          <label formControlName="title">task.title</label>
+        </ion-item>
+
+        <ion-item lines="full">
+          <ion-label position="floating">Energy</ion-label>
+          <label formControlName="energy">task.energy</label>
+        </ion-item>
+
+        <ion-item lines="full">
+          <ion-label position="floating">Fat</ion-label>
+          <label formControlName="fat"></label>
+        </ion-item>
+
+        <ion-item lines="full">
+          <ion-label position="floating">Saturated fatty acids</ion-label>
+          <label formControlName="satFat"></label>
+        </ion-item>
+
+        <ion-item lines="full">
+          <ion-label position="floating">Carbohydrates</ion-label>
+          <label formControlName="carbo"></label>
+        </ion-item>
+
+        <ion-item lines="full">
+          <ion-label position="floating">Sugar</ion-label>
+          <label formControlName="sugar"></label>
+        </ion-item>
+
+        <ion-item lines="full">
+          <ion-label position="floating">Protein</ion-label>
+          <label formControlName="protein"></label>
+        </ion-item>
+
+
+      </form>
+    </ion-card-content>
+
+
+  </ion-card>
+
+
+
+
+
+
+
+
+</ion-content>
