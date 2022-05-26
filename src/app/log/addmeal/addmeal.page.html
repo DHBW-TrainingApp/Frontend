@@ -78,7 +78,7 @@
 
     <ion-card *ngIf="isImgUploading && !isImgUploaded">
       <ion-card-header>
-        <ion-card-title>Files selected: <b>{{ FileName }}</b></ion-card-title>
+        <ion-card-title>Files selected: <strong>{{ FileName }}</strong></ion-card-title>
       </ion-card-header>
 
       <ion-card-content>
@@ -105,7 +105,7 @@
     <ion-card *ngIf="!isImgUploading && isImgUploaded">
       <ion-card-header>
         <ion-card-title>
-          <b>{{ FileName }}</b> Uploaded
+          <strong>{{ FileName }}</strong> Uploaded
         </ion-card-title>
       </ion-card-header>
 

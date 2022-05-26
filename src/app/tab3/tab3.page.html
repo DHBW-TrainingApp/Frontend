@@ -16,7 +16,7 @@
   <ion-list>
     <ion-item *ngFor="let task of Tasks" lines="full">
       <ion-avatar slot="start">
-        <img [src]="task.photoURL" />
+        <img [src]="task.photoURL" alt="image of a task" />
       </ion-avatar>
       <ion-label>
         <h2>{{task.displayName}}</h2>
