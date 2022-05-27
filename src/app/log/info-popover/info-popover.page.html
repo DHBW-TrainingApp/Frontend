@@ -1,0 +1,87 @@
+<ion-header>
+  <ion-toolbar>
+
+    <ion-title>Infos</ion-title>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <div *ngIf="Task.type==='meal'">
+      <ion-row>
+        <ion-col text-center>
+          Type : {{ Task.type }}
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col text-center>
+          title : {{ Task.title }}
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col text-center>
+          Energy : {{ Task.energy }}
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col text-center>
+          protein : {{ Task.protein }}
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col text-center>
+          sugar : {{ Task.sugar }}
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col text-center>
+          fat : {{ Task.fat }}
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col text-center>
+          satFat : {{ Task.satFat }}
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col text-center>
+          date : {{ Task.date }}
+        </ion-col>
+      </ion-row>
+    </div>
+
+    <div *ngIf="Task.type==='activity'">
+      <ion-row>
+        <ion-col text-center>
+          Type : {{ Task.type }}
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col text-center>
+          title : {{ Task.title }}
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col text-center>
+          Energy : {{ Task.reps }}
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col text-center>
+          protein : {{ Task.sets }}
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col text-center>
+          date : {{ Task.date }}
+        </ion-col>
+      </ion-row>
+    </div>
+    <ion-row>
+      <ion-col text-center>
+        <ion-button (click)="close()">Close</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

@@ -70,7 +70,11 @@ const routes: Routes = [
       import('./log/challenge/challenge.module').then(
         (m) => m.ChallengePageModule
       ),
+  },  {
+    path: 'info-popover',
+    loadChildren: () => import('./log/info-popover/info-popover.module').then( m => m.InfoPopoverPageModule)
   },
+
 ];
 @NgModule({
   imports: [

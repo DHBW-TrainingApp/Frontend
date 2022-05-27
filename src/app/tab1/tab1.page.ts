@@ -3,6 +3,8 @@ import { CrudService } from '../services/crud.service';
 import { TodolistSettingComponent } from './../log/todolist-setting/todolist-setting.component';
 import { PopoverController } from '@ionic/angular';
 import { element } from 'protractor';
+import { InfoPopoverPage } from '../log/info-popover/info-popover.page';
+import { ModalController } from '@ionic/angular';
 
 export class TODO {
   $key?: string;
@@ -22,9 +24,12 @@ export class TODO {
 })
 export class Tab1Page {
   Tasks: TODO[];
+  modalDataResponse: any;
+
   constructor(
     private crudService: CrudService,
-    private popoverController: PopoverController
+    private popoverController: PopoverController,
+    public modalCtrl: ModalController
   ) {}
 
   ngOnInit() {
@@ -72,6 +77,24 @@ export class Tab1Page {
     if (window.confirm('Are you sure?')) {
       this.crudService.delete(id);
     }
+  }
+
+  async getModal(id) {
+    const modal = await this.modalCtrl.create({
+      component: InfoPopoverPage,
+      componentProps: {
+        name: id,
+      },
+    });
+
+    modal.onDidDismiss().then((modalDataResponse) => {
+      if (modalDataResponse !== null) {
+        this.modalDataResponse = modalDataResponse.data;
+        console.log('Modal Sent Data : ' + modalDataResponse.data);
+      }
+    });
+
+    return await modal.present();
   }
 
   calculateDateSums() {

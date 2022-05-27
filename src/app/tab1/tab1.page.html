@@ -12,7 +12,7 @@
 <ion-content>
 
   <ion-list>
-    <ion-item *ngFor="let task of Tasks" lines="full">
+    <ion-item *ngFor="let task of Tasks" lines="full" (click)="getModal(task.id)">
       <div id="meal" *ngIf="task.type==='meal'">
 
         <p>{{task.date.substring(0,10)}}</p>
@@ -35,10 +35,6 @@
         <p>{{task.reps}}</p>
 
       </div>
-
-
-
-
 
       <!-- old menu:  -->
       <!--       <div item-end>
