@@ -9,57 +9,94 @@
 <ion-content>
   <ion-grid>
     <div *ngIf="Task.type==='meal'">
+
       <ion-row>
         <ion-col text-center>
-          Type : {{ Task.type }}
+          Type :
+        </ion-col>
+        <ion-col>
+           {{ Task.type }}
+         </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col text-center>
+          Title :
+        </ion-col>
+        <ion-col>
+          {{ Task.title }}
         </ion-col>
       </ion-row>
+
       <ion-row>
         <ion-col text-center>
-          title : {{ Task.title }}
+          Energy :
+        </ion-col>
+        <ion-col>
+          {{ Task.energy }} kcal
         </ion-col>
       </ion-row>
+
       <ion-row>
         <ion-col text-center>
-          Energy : {{ Task.energy }}
+          Protein :
+        </ion-col>
+        <ion-col>
+          {{ Task.protein }} gram
         </ion-col>
       </ion-row>
+
       <ion-row>
         <ion-col text-center>
-          protein : {{ Task.protein }}
+          Sugar :
+        </ion-col>
+        <ion-col>
+          {{ Task.sugar }} gram
         </ion-col>
       </ion-row>
+
       <ion-row>
         <ion-col text-center>
-          sugar : {{ Task.sugar }}
+          Fat :
+        </ion-col>
+        <ion-col>
+          {{ Task.fat }} gram
         </ion-col>
       </ion-row>
+
       <ion-row>
         <ion-col text-center>
-          fat : {{ Task.fat }}
+          Saturated Fat :
+        </ion-col>
+        <ion-col>
+          {{ Task.satFat }} gram
         </ion-col>
       </ion-row>
+
       <ion-row>
         <ion-col text-center>
-          satFat : {{ Task.satFat }}
+          Date :
         </ion-col>
-      </ion-row>
-      <ion-row>
-        <ion-col text-center>
-          date : {{ Task.date }}
+        <ion-col>
+          {{ Task.date.substring(0,10) }}
         </ion-col>
       </ion-row>
     </div>
 
+
     <div *ngIf="Task.type==='activity'">
       <ion-row>
         <ion-col text-center>
-          Type : {{ Task.type }}
+          Type :
+        </ion-col>
+        <ion-col>
+          {{ Task.type }}
+
         </ion-col>
       </ion-row>
       <ion-row>
         <ion-col text-center>
-          title : {{ Task.title }}
+          Title : {{ Task.title }}
         </ion-col>
       </ion-row>
       <ion-row>
@@ -69,19 +106,17 @@
       </ion-row>
       <ion-row>
         <ion-col text-center>
-          protein : {{ Task.sets }}
+          Protein : {{ Task.sets }}
         </ion-col>
       </ion-row>
       <ion-row>
         <ion-col text-center>
-          date : {{ Task.date }}
+          Date : {{ Task.date.substring(0,10) }}
         </ion-col>
       </ion-row>
     </div>
-    <ion-row>
-      <ion-col text-center>
+    <div id="divBtn">
         <ion-button (click)="close()">Close</ion-button>
-      </ion-col>
-    </ion-row>
+    </div>
   </ion-grid>
 </ion-content>

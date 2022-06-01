@@ -15,7 +15,7 @@ export class TODO {
   providedIn: 'root',
 })
 export class CrudService {
-  constructor(private ngFirestore: AngularFirestore, private router: Router) {}
+  private constructor(private ngFirestore: AngularFirestore, private router: Router) {}
 
   createMeal(meal: Meal) {
     const user = JSON.parse(localStorage.getItem('user'));

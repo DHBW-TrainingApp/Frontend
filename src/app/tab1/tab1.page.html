@@ -12,64 +12,55 @@
 <ion-content>
 
   <ion-list>
-    <ion-item *ngFor="let task of Tasks" lines="full" (click)="getModal(task.id)">
-      <div id="meal" *ngIf="task.type==='meal'">
+    <ion-item *ngFor="let task of Tasks" lines="full" >
+      <ion-item lines="full" (click)="getModal(task.id)">
+        <div id="meal" *ngIf="task.type==='meal'" >
 
-        <p>{{task.date.substring(0,10)}}</p>
+          <p>{{task.date.substring(0,10)}}</p>
 
-        <ion-label>
-          <div id="meal" *ngIf="task.img">
-            <img [src]="task.img" alt="image of a task" />
-          </div>
+          <ion-label>
+            <div id="meal" *ngIf="task.img">
+              <img [src]="task.img" alt="image of a task" />
+            </div>
 
-          <strong>{{task.title}}</strong>
-          <p>{{task.energy}} kcal</p>
-          <p>{{task.protein}}g of protein</p>
-        </ion-label>
+            <strong>{{task.title}}</strong>
+            <p>{{task.energy}} kcal</p>
+            <p>{{task.protein}}g of protein</p>
+          </ion-label>
 
-      </div>
+        </div>
 
-      <div id="activity" *ngIf="task.type==='activity'">
-        <p>this is for the activity</p>
-        <p>{{task.title}}</p>
-        <p>{{task.reps}}</p>
+        <div id="activity" *ngIf="task.type==='activity'" >
+          <p>this is for the activity</p>
+          <p>{{task.title}}</p>
+          <p>{{task.reps}}</p>
 
-      </div>
+        </div>
+      </ion-item>
 
-      <!-- old menu:  -->
-      <!--       <div item-end>
-        <button [routerLink]="['/update-meal', task.id]">
-          <ion-icon name="create" style="zoom:1.5"></ion-icon>
-        </button>
-        <button (click)="remove(task.id)">
-          <ion-icon name="trash" style="zoom:1.5"></ion-icon>
-        </button>
-      </div> -->
-
-
-      <!-- 3 yellow menu dots -->
-
-
-      <!-- ####################test############################# -->
-
-      <ion-list slot="end">
-        <!-- <ion-item (click)="editMeal()"> -->
-        <ion-item [routerLink]="['/update-meal', task.id]">
-          <!-- TODO: Verlinkung / Funktion-->
-          Edit
-        </ion-item>
-        <ion-item (click)="remove(task.id)">
-          <!-- TODO: Verlinkung / Funktion -->
-          Delete
-        </ion-item>
+      <ion-list id="menu" slot="end">
+          <ion-item  [routerLink]="['/update-meal', task.id]">
+            Edit
+          </ion-item>
+          <ion-item  (click)="remove(task.id)">
+            Delete
+          </ion-item>
       </ion-list>
+
+    </ion-item>
+  </ion-list>
+</ion-content>
+
+
+
+
+
+
+
+      <!-- </ion-list> -->
       <!-- ####################test############################# -->
       <!--       <ion-buttons slot="end">
         <ion-button (click)="settingsPopover()" style="color: #ffd342;">
           <ion-icon slot="icon-only" ios="ellipsis-horizontal" md="ellipsis-vertical"></ion-icon>
         </ion-button>
       </ion-buttons> -->
-    </ion-item>
-  </ion-list>
-
-</ion-content>
