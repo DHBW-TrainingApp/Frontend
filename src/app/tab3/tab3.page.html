@@ -16,7 +16,12 @@
   <ion-list>
     <ion-item *ngFor="let task of Tasks" lines="full">
       <ion-avatar slot="start">
-        <img [src]="task.photoURL" alt="image of a task" />
+        <div *ngIf="task.photoURL !== undefined; else notShow">
+          <img [src]="task.photoURL" alt="image of a task" />
+        </div>
+        <ng-template #notShow>
+          <ion-icon name="person-circle-outline" style="width:100%; height: 100%"></ion-icon>
+        </ng-template>
       </ion-avatar>
       <ion-label>
         <h2>{{task.displayName}}</h2>
