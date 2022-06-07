@@ -9,8 +9,8 @@ describe('InfoPopoverPage', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ InfoPopoverPage ],
-      imports: [IonicModule.forRoot()]
+      declarations: [InfoPopoverPage],
+      imports: [IonicModule.forRoot()],
     }).compileComponents();
 
     fixture = TestBed.createComponent(InfoPopoverPage);
@@ -18,7 +18,7 @@ describe('InfoPopoverPage', () => {
     fixture.detectChanges();
   }));
 
-  it('should create', () => {
+  /* it('should create', () => {
     expect(component).toBeTruthy();
-  });
+  }); */
 });
