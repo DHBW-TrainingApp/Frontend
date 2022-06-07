@@ -7,116 +7,81 @@
 </ion-header>
 
 <ion-content>
-  <ion-grid>
-    <div *ngIf="Task.type==='meal'">
+  <div *ngIf="Task.type==='meal'">
+    <form [formGroup]="mealForm" (ngSubmit)="onSubmit()">
+      <ion-item lines=" full">
+        <ion-label position="floating">Date</ion-label>
+        <ion-datetime displayFormat="MMM DD, h:mm A" formControlName="date"></ion-datetime>
+      </ion-item>
 
-      <ion-row>
-        <ion-col text-center>
-          Type :
-        </ion-col>
-        <ion-col>
-           {{ Task.type }}
-         </ion-col>
-      </ion-row>
+      <ion-item lines="full">
+        <ion-label position="floating">Title</ion-label>
+        <ion-input type="text" formControlName="title" required></ion-input>
+      </ion-item>
 
-      <ion-row>
-        <ion-col text-center>
-          Title :
-        </ion-col>
-        <ion-col>
-          {{ Task.title }}
-        </ion-col>
-      </ion-row>
+      <ion-item lines="full">
+        <ion-label position="floating">Energy</ion-label>
+        <ion-input type="text" formControlName="energy" required></ion-input>
+      </ion-item>
 
-      <ion-row>
-        <ion-col text-center>
-          Energy :
-        </ion-col>
-        <ion-col>
-          {{ Task.energy }} kcal
-        </ion-col>
-      </ion-row>
+      <ion-item lines="full">
+        <ion-label position="floating">Fat</ion-label>
+        <ion-input type="text" formControlName="fat" required></ion-input>
+      </ion-item>
 
-      <ion-row>
-        <ion-col text-center>
-          Protein :
-        </ion-col>
-        <ion-col>
-          {{ Task.protein }} gram
-        </ion-col>
-      </ion-row>
+      <ion-item lines="full">
+        <ion-label position="floating">Saturated fatty acids</ion-label>
+        <ion-input type="text" formControlName="satFat" required></ion-input>
+      </ion-item>
 
-      <ion-row>
-        <ion-col text-center>
-          Sugar :
-        </ion-col>
-        <ion-col>
-          {{ Task.sugar }} gram
-        </ion-col>
-      </ion-row>
+      <ion-item lines="full">
+        <ion-label position="floating">Carbohydrates</ion-label>
+        <ion-input type="" formControlName="carbs" required></ion-input>
+      </ion-item>
 
-      <ion-row>
-        <ion-col text-center>
-          Fat :
-        </ion-col>
-        <ion-col>
-          {{ Task.fat }} gram
-        </ion-col>
-      </ion-row>
+      <ion-item lines="full">
+        <ion-label position="floating">Sugar</ion-label>
+        <ion-input type="text" formControlName="sugar" required></ion-input>
+      </ion-item>
 
-      <ion-row>
-        <ion-col text-center>
-          Saturated Fat :
-        </ion-col>
-        <ion-col>
-          {{ Task.satFat }} gram
-        </ion-col>
-      </ion-row>
+      <ion-item lines="full">
+        <ion-label position="floating">Protein</ion-label>
+        <ion-input type="text" formControlName="protein" required></ion-input>
+      </ion-item>
 
-      <ion-row>
-        <ion-col text-center>
-          Date :
-        </ion-col>
-        <ion-col>
-          {{ Task.date.substring(0,10) }}
-        </ion-col>
-      </ion-row>
-    </div>
+      <ion-row style="margin-top: 5px;">
 
-
-    <div *ngIf="Task.type==='activity'">
-      <ion-row>
-        <ion-col text-center>
-          Type :
-        </ion-col>
-        <ion-col>
-          {{ Task.type }}
-
-        </ion-col>
-      </ion-row>
-      <ion-row>
-        <ion-col text-center>
-          Title : {{ Task.title }}
-        </ion-col>
-      </ion-row>
-      <ion-row>
-        <ion-col text-center>
-          Energy : {{ Task.reps }}
-        </ion-col>
-      </ion-row>
-      <ion-row>
-        <ion-col text-center>
-          Protein : {{ Task.sets }}
-        </ion-col>
-      </ion-row>
-      <ion-row>
-        <ion-col text-center>
-          Date : {{ Task.date.substring(0,10) }}
-        </ion-col>
-      </ion-row>
-    </div>
-    <div id="divBtn">
         <ion-button (click)="close()">Close</ion-button>
-    </div>
-  </ion-grid>
+
+      </ion-row>
+    </form>
+  </div>
+
+  <div *ngIf="Task.type==='activity'">
+    <form [formGroup]="mealForm" (ngSubmit)="onSubmit()">
+      <ion-item lines=" full">
+        <ion-label position="floating">Date</ion-label>
+        <ion-datetime displayFormat="MMM DD, h:mm A" formControlName="date"></ion-datetime>
+      </ion-item>
+
+      <ion-item lines="full">
+        <ion-label position="floating">Title</ion-label>
+        <ion-input type="text" formControlName="title" required></ion-input>
+      </ion-item>
+
+      <ion-item lines="full">
+        <ion-label position="floating">Reps</ion-label>
+        <ion-input type="text" formControlName="reps" required></ion-input>
+      </ion-item>
+
+      <ion-item lines="full">
+        <ion-label position="floating">Sets</ion-label>
+        <ion-input type="text" formControlName="sets" required></ion-input>
+      </ion-item>
+
+      <ion-row style="margin-top: 5px;">
+        <ion-button (click)="close()">Close</ion-button>
+      </ion-row>
+    </form>
+  </div>
 </ion-content>

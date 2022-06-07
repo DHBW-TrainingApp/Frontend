@@ -5,6 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { TodolistSettingComponent } from './log/todolist-setting/todolist-setting.component';
 
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -25,6 +26,7 @@ import { FileSizePipe } from './file-size.pipe';
     HttpClientModule,
     IonicModule.forRoot(),
     AppRoutingModule,
+    ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule,
     AngularFireDatabaseModule,
