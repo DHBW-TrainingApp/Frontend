@@ -74,6 +74,10 @@ const routes: Routes = [
     path: 'info-popover',
     loadChildren: () => import('./log/info-popover/info-popover.module').then( m => m.InfoPopoverPageModule)
   },
+  {
+    path: 'slides',
+    loadChildren: () => import('./util/slides/slides.module').then( m => m.SlidesPageModule)
+  },
 
 ];
 @NgModule({

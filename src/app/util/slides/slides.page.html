@@ -1,0 +1,101 @@
+<head>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css" />
+</head>
+<ion-header>
+  <ion-toolbar>
+    <ion-title>slides</ion-title>
+  </ion-toolbar>
+</ion-header>
+<style>
+  ion-slides {
+    height: 100%;
+  }
+
+  img {
+    height: 50%;
+    width: 50%;
+    margin: 60px 0 40px;
+    pointer-events: none;
+  }
+
+  ion-icon {
+    height: 50%;
+    width: 50%;
+    margin: 60px 0 40px;
+    pointer-events: none;
+  }
+
+
+  .swiper-slide {
+    display: block;
+  }
+
+  .swiper-slide h2 {
+    margin-top: 2.8rem;
+  }
+
+
+
+  b {
+    font-weight: 500;
+  }
+
+  p {
+    padding: 0 40px;
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--ion-color-step-600, #60646b);
+  }
+
+  p b {
+    color: var(--ion-text-color, #000000);
+  }
+</style>
+<ion-content>
+  <ion-slides>
+    <ion-slide>
+      <ion-icon name="barbell-outline"></ion-icon>
+      <h2>Welcome</h2>
+      <p>
+        The <b>workout-log</b> app isn't just another fitness app. It's is a practical preview of an app that's helps
+        you reaching your goals while combining a social aspect.
+      </p>
+    </ion-slide>
+
+    <ion-slide>
+      <ion-icon name="people-outline"></ion-icon>
+      <h2>Compare to others </h2>
+      <p>
+        Compare yourself with your friends to learn from each other and to compete with them. If one of you lost track
+        of his or her training you can support and cheer each other on
+      </p>
+    </ion-slide>
+
+    <ion-slide>
+      <ion-icon name="bar-chart-outline"></ion-icon>
+      <h2>Steady progress</h2>
+      <p>
+        Progression in strength training is probably the most important factor when it comes to building muscle and
+        strength. Constant muscle building can only take place when the training load increases progressively.
+        Workout-log helps you track this progress easily.
+      </p>
+    </ion-slide>
+
+    <ion-slide>
+      <ion-icon name="alert-circle-outline"></ion-icon>
+      <h2>Do not overcomplicate!</h2>
+      <p>
+        Put the focus on the important thing, which is perfectly possible through our simple design. Also, the app is
+        free of any bullshit. No subscriptions, no ads, perfect for focused training. </p>
+    </ion-slide>
+
+    <ion-slide>
+      <img src="../../../assets/LogoWL.png" />
+      <h2>Ready to Play?</h2>
+      <ion-button fill="clear" href="./login">Login (with Google)
+      </ion-button>
+      <ion-button fill="clear" href="./registration">Registrate
+      </ion-button>
+    </ion-slide>
+  </ion-slides>
+</ion-content>
