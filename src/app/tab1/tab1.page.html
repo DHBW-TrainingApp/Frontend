@@ -12,42 +12,59 @@
 <ion-content>
 
   <ion-list>
-    <ion-item *ngFor="let task of Tasks" lines="full" >
+    <ion-item id="listItem" *ngFor="let task of Tasks" lines="full">
       <ion-item lines="full" (click)="getModal(task.id)">
-        <div id="meal" *ngIf="task.type==='meal'" >
+        <div id="meal" *ngIf="task.type==='meal'">
 
-          <p>{{task.date.substring(0,10)}}</p>
-
+          <!--           <strong id="date">{{task.date.substring(0,10)}}</strong><br>
+ --> <br>
           <ion-label>
-            <div id="meal" *ngIf="task.img">
-              <img [src]="task.img" alt="image of a task" />
+            <div id="meal" *ngIf="task.img !== 'none'">
+              <img [src]="task.img" alt="" />
             </div>
 
-            <strong>{{task.title}}</strong>
+            <strong id="food">{{task.title}}</strong>
             <p>{{task.energy}} kcal</p>
             <p>{{task.protein}}g of protein</p>
           </ion-label>
 
         </div>
 
-        <div id="activity" *ngIf="task.type==='activity'" >
-          <p>this is for the activity</p>
-          <p>{{task.title}}</p>
-          <p>{{task.reps}}</p>
+        <div id="activity" *ngIf="task.type==='activity'">
+          <!--           <strong id="date">{{task.date.substring(0,10)}}</strong><br><br>
+ -->
+          <strong id="actTitle">{{task.title}}</strong>
+          <p>{{task.reps}} reps</p>
+
+        </div>
+
+        <div *ngIf="task.type==='date'">
+          <strong id="date">{{task.date.substring(0,10)}}</strong><br><br>
+
+
+          <p>{{task.energy}} kcal</p>
+          <p>{{task.protein}} gramm</p>
+
 
         </div>
       </ion-item>
 
       <ion-list id="menu" slot="end">
-          <ion-item  [routerLink]="['/update-meal', task.id]">
+        <div *ngIf="task.type !== 'date'">
+
+          <ion-item id="edit" [routerLink]="['/update-meal', task.id]">
             Edit
           </ion-item>
-          <ion-item  (click)="remove(task.id)">
+          <ion-item id="delete" (click)="remove(task.id)">
             Delete
           </ion-item>
+        </div>
       </ion-list>
-
     </ion-item>
+
+
+
+
   </ion-list>
 </ion-content>
 
@@ -57,9 +74,9 @@
 
 
 
-      <!-- </ion-list> -->
-      <!-- ####################test############################# -->
-      <!--       <ion-buttons slot="end">
+<!-- </ion-list> -->
+<!-- ####################test############################# -->
+<!--       <ion-buttons slot="end">
         <ion-button (click)="settingsPopover()" style="color: #ffd342;">
           <ion-icon slot="icon-only" ios="ellipsis-horizontal" md="ellipsis-vertical"></ion-icon>
         </ion-button>

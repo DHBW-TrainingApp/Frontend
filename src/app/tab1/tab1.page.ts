@@ -115,6 +115,7 @@ export class Tab1Page {
           }
         } else {
           days.push({
+            date: date,
             type: 'date',
             index: i + days.length,
             energy: kcal.toString(),
