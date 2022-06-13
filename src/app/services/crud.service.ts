@@ -15,7 +15,10 @@ export class TODO {
   providedIn: 'root',
 })
 export class CrudService {
-  private constructor(private ngFirestore: AngularFirestore, private router: Router) {}
+  private constructor(
+    private ngFirestore: AngularFirestore,
+    private router: Router
+  ) {}
 
   createMeal(meal: Meal) {
     const user = JSON.parse(localStorage.getItem('user'));
@@ -48,6 +51,23 @@ export class CrudService {
     return this.ngFirestore
       .collection('users/')
       .doc(user.uid)
+      .collection('tasks')
+      .snapshotChanges();
+
+    /*  return this.ngFirestore.collection('users').snapshotChanges();
+
+    return this.ngFirestore
+      .collection('users/' + user.uid + '/tasks')
+      .snapshotChanges(); */
+  }
+
+  getTasksSocial(id) {
+    const user = id;
+
+    // usages for subcollections
+    return this.ngFirestore
+      .collection('users/')
+      .doc(user)
       .collection('tasks')
       .snapshotChanges();
 

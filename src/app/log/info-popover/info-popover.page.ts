@@ -41,7 +41,6 @@ export class InfoPopoverPage implements OnInit {
           title: [data['title']],
           reps: [data['reps']],
           sets: [data['sets']],
-
           date: [data['date']],
         });
       }

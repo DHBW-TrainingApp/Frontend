@@ -1,0 +1,65 @@
+ion-card-header {
+  font-family: "Rubik-Black";
+  text-align: center;
+}
+
+ion-card {
+  width: 100%;
+}
+
+ion-card:hover {
+  filter: brightness(50%);
+}
+#listItem {
+  padding-top: 10px;
+}
+
+ion-grid {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+  height: 98%;
+  text-align: center;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#delete,
+#edit {
+  font-family: Helvetica;
+  color: #ffd342;
+}
+
+#activity {
+  border-bottom: none;
+}
+
+#listItem {
+  border-bottom: solid 1px white;
+}
+
+img {
+  border-radius: 20%;
+  padding-top: 5px;
+  max-width: 100%;
+  height: auto;
+}
+
+#food,
+#actTitle {
+  color: rgb(255, 153, 0);
+  margin-top: 20px;
+}
+
+p {
+  color: #666666;
+}
+
+#date {
+  padding-bottom: 100px;
+}

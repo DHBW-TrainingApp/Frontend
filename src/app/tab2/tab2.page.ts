@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-tab2',
@@ -7,13 +8,16 @@ import { Component } from '@angular/core';
 })
 export class Tab2Page {
   username;
-  constructor() {
+  constructor(private router: Router) {}
+
+  ngOnInit() {
     const user = JSON.parse(localStorage.getItem('user'));
-    if (this.username) {
+    if (user === null) {
+      this.router.navigate(['/slides']);
+    }
+
+    if (this.username === undefined) {
       this.username = JSON.stringify(user.displayName).slice(1, -1);
-      // console.log(JSON.stringify(user.uid));
     }
   }
-
-  ngOnInit() {}
 }

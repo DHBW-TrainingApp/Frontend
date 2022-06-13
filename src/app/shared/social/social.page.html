@@ -3,17 +3,13 @@
     <ion-title></ion-title>
   </ion-toolbar>
 </ion-header>
-<ion-header>
-  <ion-toolbar>
 
-  </ion-toolbar>
-</ion-header>
 
 <ion-content>
-
+  <ion-button href="tabs/tab3">BACK</ion-button>
   <ion-list>
     <ion-item id="listItem" *ngFor="let task of Tasks" lines="full">
-      <ion-item lines="full" (click)="getModal(task.id)">
+      <ion-item lines="full">
         <div id="meal" *ngIf="task.type==='meal'">
 
           <!--           <strong id="date">{{task.date.substring(0,10)}}</strong><br>
@@ -49,36 +45,6 @@
 
         </div>
       </ion-item>
-
-      <ion-list id="menu" slot="end">
-        <div *ngIf="task.type !== 'date'">
-
-          <ion-item id="edit" [routerLink]="['/update-meal', task.id]">
-            Edit
-          </ion-item>
-          <ion-item id="delete" (click)="remove(task.id)">
-            Delete
-          </ion-item>
-        </div>
-      </ion-list>
     </ion-item>
-
-
-
-
   </ion-list>
 </ion-content>
-
-
-
-
-
-
-
-<!-- </ion-list> -->
-<!-- ####################test############################# -->
-<!--       <ion-buttons slot="end">
-        <ion-button (click)="settingsPopover()" style="color: #ffd342;">
-          <ion-icon slot="icon-only" ios="ellipsis-horizontal" md="ellipsis-vertical"></ion-icon>
-        </ion-button>
-      </ion-buttons> -->

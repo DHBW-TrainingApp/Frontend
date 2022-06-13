@@ -78,6 +78,10 @@ const routes: Routes = [
     path: 'slides',
     loadChildren: () => import('./util/slides/slides.module').then( m => m.SlidesPageModule)
   },
+  {
+    path: 'social',
+    loadChildren: () => import('./shared/social/social.module').then( m => m.SocialPageModule)
+  },
 
 ];
 @NgModule({
