@@ -16,7 +16,7 @@ export class Tab2Page {
       this.router.navigate(['/slides']);
     }
 
-    if (this.username === undefined) {
+    if (this.username !== undefined) {
       this.username = JSON.stringify(user.displayName).slice(1, -1);
     }
   }
