@@ -13,36 +13,40 @@
 
   <ion-list>
     <ion-item id="listItem" *ngFor="let task of Tasks" lines="full">
-      <ion-item lines="full" (click)="getModal(task.id)">
+      <ion-item slot="start" lines="full" (click)="getModal(task.id)">
+
         <div id="meal" *ngIf="task.type==='meal'">
 
-          <!--           <strong id="date">{{task.date.substring(0,10)}}</strong><br>
- --> <br>
+          <!--<strong id="date">{{task.date.substring(0,10)}}</strong><br>--> <br>
           <ion-label>
-            <ion-avatar>
+            <ion-avatar *ngIf="task.img !== 'none'">
               <div id="meal" *ngIf="task.img !== 'none'">
                 <img [src]="task.img" alt="" />
               </div>
             </ion-avatar>
-            <strong id="food">{{task.title}}</strong>
-            <p>{{task.energy}} kcal</p>
-            <p>{{task.protein}}g of protein</p>
+
+            <div class="food">
+              <strong>{{task.title}}</strong>
+              <ion-list>
+                <p>{{task.energy}} kcal</p>
+                <p>{{task.protein}}g of protein</p>
+<!--               <p>{{task.sugar}}g of sugar</p>-->
+              </ion-list>
+
+            </div>
           </ion-label>
 
         </div>
 
         <div id="activity" *ngIf="task.type==='activity'">
-          <!--           <strong id="date">{{task.date.substring(0,10)}}</strong><br><br>
- -->
-          <strong id="actTitle">{{task.title}}</strong>
-          <p>{{task.reps}} reps</p>
-
+            <strong id="actTitle">{{task.title}}</strong>
+            <p>{{task.reps}} reps</p>
         </div>
 
         <div *ngIf="task.type==='date'">
-          <strong id="date">{{task.date.substring(0,10)}}</strong><br><br>
+          <strong style="padding-top: 20px;" id="date">{{task.date.substring(0,10)}}</strong><br><br>
 
-
+          <strong>Summary</strong>
           <p>{{task.energy}} kcal</p>
           <p>{{task.protein}} gramm</p>
 
@@ -64,10 +68,13 @@
     </ion-item>
 
 
-
-
   </ion-list>
 </ion-content>
+
+
+
+
+
 
 
 
