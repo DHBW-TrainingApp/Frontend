@@ -37,7 +37,7 @@ export class AddactivityPage implements OnInit {
         .createMeal(this.mealForm.value)
         .then(() => {
           this.mealForm.reset();
-          this.router.navigate(['/todo-list']);
+          this.router.navigate(['/tabs/tab1']);
         })
         .catch((err) => {
           console.log(err);

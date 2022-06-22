@@ -100,7 +100,7 @@ export class CrudService {
       .doc(id)
       .update(todo)
       .then(() => {
-        this.router.navigate(['/todo-list']);
+        this.router.navigate(['/tabs/tab1']);
       })
       .catch((error) => console.log(error));
   }
@@ -114,7 +114,7 @@ export class CrudService {
       .doc(id)
       .update(meal)
       .then(() => {
-        this.router.navigate(['/todo-list']);
+        this.router.navigate(['/tabs/tab1']);
       })
       .catch((error) => console.log(error));
   }
